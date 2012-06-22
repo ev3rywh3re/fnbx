@@ -1,0 +1,702 @@
+/*
+THEME NAME: Funbox Base Theme
+THEME URI: http://funroe.net/projects/funbox-theme/
+DESCRIPTION: Funbox is a complicated yet useful base theme designed to build child themes. It's for the grind!
+VERSION: 1.0
+AUTHOR: Jess Planck
+AUTHOR URI: http://funroe.net/
+LICENSE: GNU General Public License v2.0
+LICENSE URI: http://www.gnu.org/licenses/gpl-2.0.html
+TAGS: microformats
+*/
+
+/* 
+Copyright (c) Jess Planck (http://funroe.net)
+
+The Funbox Base Theme is released under the GNU General Public License.
+
+This is a WordPress Theme (http://wordpress.org). WordPress is free
+software: you can redistribute it and/or modify it under the terms of
+the GNU General Public License as published by the Free Software
+Foundation, either version 2 of the License, or (at your option) any
+later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with WordPress.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+/*
+START- CSS Reset
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+/* Modified by Jess Planck to fix validation errors & warnings */
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	/* remove content: none; to fix validator IE be dammed */
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+END- CSS Reset
+*/
+
+
+/* START defaults */
+
+body {
+	width: 100%;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 72%;
+	color: #000;
+}
+
+/* Interactive HTML Styles */
+
+a, a:link {
+	color: #333;
+	text-decoration: underline;
+}
+
+a:visited {
+	color: #999;
+}
+	
+a:hover {
+	text-decoration: none;
+}
+
+/* Common text blocks */	
+
+p {
+	margin: 1em 0;
+}
+
+blockquote {
+	margin: 1em;
+}
+
+/* Lists and definitions */
+
+ul, ol, dl {
+	margin: .1em 0 .1em .4em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ul li {
+	margin: .1em 0 .1em 1em;
+}
+
+ol {
+	list-style: decimal;
+}
+
+ol li {
+	margin: .1em 0 .1em 1.2em;
+}
+
+dl dt {
+	font-weight: bold;
+	margin: .2em 0;
+}
+
+dl dd {
+	margin: .1em 0 .1em 1.2em;
+}
+
+table { 
+  	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+th {
+  	text-align: left;
+	font-weight: bold;
+}
+
+td {
+  	text-align: left;
+	font-weight: normal;
+}
+
+code, pre {
+	font-family: "courier new", courier, monospace;
+}
+
+input.text {
+	padding: 3px;
+	border: 1px solid #999;	
+}
+
+/* Heading Styles */
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Helvetica, Arial, sans-serif;	
+	font-weight: 600;
+	line-height: 1.1em;
+    color: #1f1f1f;
+    margin: .4em 0;
+}
+
+h1 {
+    font-size: 225%;
+}
+
+h2 {
+    font-size: 205%;
+}
+
+h3 {
+    font-size: 185%;
+}
+
+h4 {
+    font-size: 165%;
+}
+
+h5 {
+    font-size: 145%;
+}
+
+h6 {
+    font-size: 125%;
+}
+
+/* END defaults */
+
+/* START Multi-purpose Elements */
+/* General class elements might need to be last or we could accidentally take precedent with earlier modificaitons */
+
+.left, .alignleft {
+	float: left;
+}
+
+.right, .alignright {
+	float: right;
+}
+
+
+.center, .aligncenter {
+	display: block;
+	margin: 0 auto;
+}
+
+.clear, .clearer {
+	clear: both;
+}
+
+.clear-min {
+	clear: both;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+a.nofx {
+	background: none;
+	border: none;
+}
+
+a.nofx:hover {
+	background: none;
+	border: none;
+}
+
+/* END Multi-purpose Elements */
+
+/* START Layout */
+
+.wrapper- {
+	width: 66em; 	
+	margin: 0 auto 0 auto;
+	text-align: left;
+	background: transparent;
+}
+
+.container- {
+	width: 46.8em;
+	float: left;
+	padding-bottom: 4em;	
+}
+
+.content- {
+	padding: .2em 0 0 0;
+    font-size: 116%;	
+}
+
+.footer- {
+	width: 100%;
+	margin: 2em 0;
+	padding: 3em 0 0 0;
+	clear: both;
+	text-align: center;
+}
+
+/* END Layout */
+
+/* START Header */
+
+.header- {
+	padding-top: 1.2em;
+}
+
+.header- .blog-title- {
+	font-weight: 900;
+    font-size: 300%;
+	line-height: 1.1em;
+}
+
+.header- .blog-title- a, .header- .blog-title- a:link, .header- .blog-title- a:active, .header- .blog-title- a:visited {
+	text-decoration: none;
+    color: #666;    	
+}
+
+.header- .blog-title- a:hover {
+	text-decoration: underline;	
+}
+
+.header- .blog-description- {
+	color: #6f6f6f;
+	font-weight: bold;
+}
+
+/* END Header */
+
+/* START Access and Top Menu */
+.access- {
+	width: 100%;
+	padding-top: 1.5em;
+}
+
+.access- .link-skip {
+	display: none;
+}
+
+.menu-top-container- {
+	width: 100%;
+	font-size: 120%;
+	margin: 2.4em 0;
+	float: left;
+	clear: both; 	
+}
+
+.menu-top-container- ul {
+	list-style-type: none;
+	margin-left: 0;
+}
+
+ul.menu-top li.menu-item {
+	float: left;
+	margin: 0 1.2em 0 0;
+	font-weight: bold;
+}
+
+ul.menu-top li a, ul.menu-top li a:link, ul.menu-top li a:active, ul.menu-top li a:visited {
+	display: block;
+	padding: .3em;
+	color: #000;
+	text-decoration: none;
+}
+
+ul.menu-top li a:hover {
+	background: #ccc;
+	text-decoration: none;
+}
+
+ul.menu-top li.menu-item .sub-menu {
+	display: none;
+}
+
+ul.menu-top li.menu-item:hover .sub-menu {
+	display: block;
+}
+
+/* END Access and Top Menu */
+
+/* START Widget Group Styles */
+
+.widgets- {
+	float: right;
+	width: 15.4em;
+}
+
+.widgets- ul {
+	list-style-type: none;
+	text-align: left;
+}
+
+/* Here for easy access to make changes, or delete */
+.widgets- ul.xoxo {
+	margin: 0;
+	padding: 0;
+}
+
+.widgets- ul li {
+	list-style-type: none;
+	text-align: left;
+}
+
+/* Here for easy access to make changes, or delete */
+.widgets- table {
+	margin: 0;
+	padding: 0;
+}
+
+/* Here for easy access to make changes, or delete */
+.widgets- div, .widgets- h3, .widgets- h4, .widgets- ul, .widgets- li {
+	margin: 0;
+	padding: 0;
+}
+
+.widgets- h3, .widgets- h4 {
+	font-size: 120%;
+	font-weight: 400;
+	padding: .4em 0;
+	margin: .4em 0;
+}
+
+.widgets- li.widget {
+	margin: 1em 0;
+}
+
+.widgets- li.widget ul {
+	margin: 0 0 0 .5em;
+}
+
+.widgets- li.widget li {
+	margin: .5em 0 .5em .5em;
+}
+
+.widgets- .widget_search {
+	padding: .2em;
+}
+
+/* END Widget Group Styles */
+
+/* START Post Navigation Styles */
+
+.navigation {
+	/* 
+	This one is tricky since we have two floats in a div
+	requries both "width: x" and "overflow: auto" to clear
+	interior elements for box creation!
+	*/
+	width: auto;
+	margin: 1em 0;
+	font-size: 90%;
+	overflow: auto;
+	clear: both;
+}
+
+.nav-next, .nav-previous {
+	width: 48%;
+}
+
+.nav-previous {
+	float: left;
+	text-align: left;
+}
+
+.nav-next {
+	float: right;
+	text-align: right;
+	clear: right;
+}
+/* START Post Navigation Styles */
+
+/* START Post styles */
+
+.post {
+    padding-top: .2em;
+}
+
+.entry-title, .entry-title a, .entry-title a:visited {
+    color: #3f3f3f;
+    text-decoration: none;
+}
+
+.entry-title a:hover {
+    text-decoration: underline;
+}
+
+.entry-date abbr.published {
+	display: block;
+	cursor: default;
+	margin: .2em 0;
+	color: #afafaf;
+}
+
+.entry-content {
+    line-height: 1.5em;
+    clear: both;
+}
+
+.entry-summary {
+    line-height: 1.2em;
+    clear: both;
+}
+
+.entry-content img {
+	max-width: 620px;
+	margin: .2em;
+}
+
+.entry-content img.center, .entry-content img.aligncenter {
+	display: block;
+	margin: 0.4em auto;
+}
+
+.entry-content img.alignright {
+	margin: 0.4em 0 0.4em 1.1em
+}
+
+.entry-content img.alignleft {
+	margin: 0.4em 1.1em 0.4em 0;
+}
+
+.entry-meta {
+	margin: 2em 0;
+	font-size: 90%;
+	line-height: 1.1em;
+	color: #222;
+	clear: both;
+}
+
+.entry-edit {
+	clear: both;
+}
+
+div.link-wrapper-edit {
+	clear: both;
+}
+
+.post.sticky {
+	font-size: 112%;
+}
+
+/* END Post styles */
+
+/* START WordPress Image / Gallery Styles */
+
+.gallery .gallery-item {
+	float: left;
+	width: 48%;
+}
+
+.wp-caption {
+	padding: .4em;
+	text-align: center;
+}
+
+.wp-caption .wp-caption-text, .gallery-item .gallery-caption {
+	margin: .2em 0 .1em 0;
+	padding: .2em .4em .1em .4em;
+	font-size: 76%;
+	text-align: center;
+	line-height: 1.2em;
+}
+
+/* END WordPress Image / Gallery Styles */
+
+/* START Comment Styles */
+
+.comments- {
+	margin: 0 .5em 0 .5em;
+	font-size: 96%;
+	clear: both;
+}
+
+.comment-author {
+	padding: .4em;
+}
+
+.comment-author .avatar {
+	float: left;
+	margin: 0 .5em .5em 0;
+}
+
+.bypostauthor .comment-body .comment-author {
+	border: 1px solid #afafaf;
+}
+
+.bypostauthor-no .comment-body .comment-author {
+	color: #000;
+	background: transparent;
+}
+
+.comment-meta {
+	clear: right;
+	margin: 0 0 .5em 0;
+	padding: .2em 0 .2em .5em;
+	font-size: 90%;
+	color: #222;
+}
+
+.commentlist {
+	list-style-type: none;
+	margin: 0 .2em .5em .4em;
+}
+
+.commentlist .comment, .commentlist .pingback {
+	list-style-type: none;
+	margin: 0 0 2em 0;
+	padding: .2em 0 0 0;
+}
+
+/* END Comment Styles */
+
+/* Start Forms and Controls */
+
+fieldset {
+	display: block;
+}
+
+legend {
+	font-size: 115%;
+	font-weight: bold;
+    margin: .4em 0;
+}
+
+label {
+	font-weight: bold;
+}
+
+input, textarea, select {
+	margin: .2em;
+	padding: .2em;
+	border: 1px solid #666;
+}
+
+textarea {
+	clear: both;
+}
+
+input:hover, textarea:hover {
+  border: 1px solid #333;
+}
+ 
+input:focus, textarea:focus {
+  border: 1px solid #d1d1d1;
+}
+
+div.form-wrapper {
+	position: relative;
+	width: 100%;
+}
+
+div.form-container {
+	position: relative;
+	width: 44em;
+	padding: .2em;
+	margin: 0 auto 0 auto;
+}
+
+div.form-container form {
+	margin: 0;
+	padding: 0;
+}
+
+div.form-container h3, div.form-container h4 {
+	clear: both;
+}
+
+div.form-container .form-row {
+	clear: both;
+}
+
+div.form-container .form-note {
+	padding: .2em;
+	clear: both;
+}
+
+div.form-container .form-label {
+	float: left;
+	padding: .6em .4em .2em .2em;
+	clear: left;
+	width: 15em;
+	text-align: right;
+	font-weight: bold;
+}
+
+div.form-container .form-input {
+	position: relative;
+	width: 25em;
+	margin: 0 0 0 16em;
+	padding: .4em 0 .4em 0;
+}
+
+/* End Forms and Controls */
+
+/* START - Custom Classes */
+/* END - Custom Classes */
+
+/* START - Plugin Styles */
+/* END - Plugin Styles */
+
+/* START Hidden Elements */
+/* END Hidden Elements */
+
+/* START Debug */
+
+/*
+body {
+	background: #fff url("library/images/debug-grid-760px.png") no-repeat top center;
+}
+*/
+/* END Debug */
