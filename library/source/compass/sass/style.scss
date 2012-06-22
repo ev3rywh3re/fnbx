@@ -1,0 +1,298 @@
+/*
+THEME NAME: Diary Funbox
+THEME URI: http://funroe.net
+DESCRIPTION: A responsive fork of a diary book theme.
+VERSION: 1.0
+AUTHOR: Jess Planck
+AUTHOR URI: http://funroe.net/
+TEMPLATE: funbox
+*/
+
+/* 
+Copyright (c) Jess Planck (http://funroe.net)
+
+The Funbox Base Theme is released under the GNU General Public License.
+
+This is a WordPress Theme (http://wordpress.org). WordPress is free
+software: you can redistribute it and/or modify it under the terms of
+the GNU General Public License as published by the Free Software
+Foundation, either version 2 of the License, or (at your option) any
+later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with WordPress.  If not, see <http://www.gnu.org/licenses/>.
+
+*/
+
+/* Imports --------------------------------------------------------------*/
+@import "base";
+@import 'defaults';
+
+/* Layouts */
+
+$total-columns: 19; 
+$column-width: 2.626em;
+$gutter-width: .62em;
+$grid-padding: .382em;
+$show-grid-backgrounds: $show_grids;
+
+body {
+	background-repeat: repeat-x;
+	background-position: top left; 
+}
+
+.wrapper- {
+	@include container;
+	@include susy-grid-background;
+}
+	
+.header-diary-wrapper- {
+	width: 100%;
+}
+	
+/* Layout */
+
+.header-diary- {
+	@include container;
+	@include susy-grid-background;
+	background-repeat: no-repeat;
+	background-position: 10em left; 
+	height: 15em;
+}
+
+.container- {
+	@include span-columns(14);
+	font-size: 96%;
+}
+	
+.content- {
+	@include span-columns(13.1, 14);
+	@include pre(.5);
+}
+
+.widgets-primary- {
+	@include span-columns(4);
+	@include omega;
+	
+	padding: 0 1.2em 0 0;
+	
+	font-size: 94%;
+}
+	
+.widgets-secondary- {
+	@include span-columns(4);
+	@include omega;
+	
+	padding: 0 1.2em 0 0;
+	
+	font-size: 94%;	
+	clear: right;		
+}
+
+@include at-breakpoint( 75em 22 ) {
+
+	.wrapper- {
+		@include container;
+		@include susy-grid-background;
+		background: transparent url('library/images/wrapper-notebook-body-22.png') repeat-y left 9em;
+	}
+
+/* Layout */
+
+	.header-diary- {
+		@include container;
+		@include susy-grid-background;
+		background: transparent url('library/images/header-notebook-top-22.png');
+		background-repeat: no-repeat;
+		background-position: 10em left; 
+		height: 15em;
+	}
+
+	.container- {
+		@include span-columns(15.9);
+		font-size: 96%;
+		/* Container border - right inner div: */
+	}
+
+	.content- {
+		@include span-columns(14.8, 15.9);
+		@include pre(.5);
+	}
+
+	.widgets-primary- {
+		@include span-columns(5.1);
+		@include omega;
+		padding: 0 2em 0 0;
+	
+		font-size: 94%;
+		/* See container border  */
+	
+	}
+	
+	.widgets-secondary- {
+		@include span-columns(6);
+		@include omega;
+		font-size: 94%;
+		clear: right;		
+	}
+
+}
+
+@include at-breakpoint( 42em 13 62em ) {
+	.wrapper- {
+		@include container;
+		@include susy-grid-background;
+	}
+		
+	/* Layout */
+	
+	.header-diary- {
+		@include container;
+		@include susy-grid-background;	
+		background-repeat: no-repeat;
+		background-position: 10em left; 
+		height: 15em;
+	}
+	
+	.container- {
+		@include span-columns(13);
+		font-size: 96%;
+	}
+	
+	.content- {
+		@include span-columns(12.1, 13);
+		@include pre(.5);
+	}
+	
+	.widgets-primary- {
+		@include span-columns(4);
+		
+		padding: 0 1.2em 0 0;
+		
+		font-size: 94%;
+	}
+	
+	.widgets-secondary- {
+		@include span-columns(4);
+		
+		padding: 0 1.2em 0 0;
+		
+		font-size: 94%;	
+		clear: right;		
+	}
+}
+
+@include at-breakpoint( 28em 8 42em ) {
+	.wrapper- {
+		@include container;
+		@include susy-grid-background;
+	}
+		
+	/* Layout */
+	
+	.header-diary- {
+		@include container;
+		@include susy-grid-background;	
+		background-repeat: no-repeat;
+		background-position: 10em left; 
+		height: 15em;
+	}
+	
+	.container- {
+		@include span-columns(8);
+		font-size: 96%;
+	}
+	
+	.content- {
+		@include span-columns(8);
+	}
+	
+	.widgets-primary- {
+		@include span-columns(8);
+				
+		font-size: 94%;
+	}
+	
+	.widgets-secondary- {
+		@include span-columns(8);
+				
+		font-size: 94%;	
+		clear: right;		
+	}
+}
+
+@include at-breakpoint( 0em 6 28em ) {
+	.wrapper- {
+		@include container;
+		@include susy-grid-background;
+	}
+		
+	/* Layout */
+	
+	.header-diary- {
+		@include container;
+		@include susy-grid-background;	
+		background-repeat: no-repeat;
+		background-position: 10em left; 
+		height: 15em;
+	}
+	
+	.container- {
+		@include span-columns(6);
+		font-size: 96%;
+	}
+	
+	.content- {
+		@include span-columns(6);
+	}
+	
+	.widgets-primary- {
+		@include span-columns(6);
+				
+		font-size: 94%;
+	}
+	
+	.widgets-secondary- {
+		@include span-columns(6);
+				
+		font-size: 94%;	
+		clear: right;		
+	}
+}
+
+/* Media Queries */
+
+/* 480px */
+@media only screen and (min-width: 1px) and (max-width: 480px), only screen and (max-device-width: 480px) {
+/*  @import 'media/6-column'; */
+}
+
+/* 768px */
+@media only screen and (min-width: 481px) and (max-width: 809px) {
+/*  @import 'media/9-column'; */
+}
+
+/* 768px */
+@media only screen and (min-width: 810px) and (max-width: 1009px) {
+/*  @import 'media/14-column'; */
+}
+
+/* 992px */
+@media only screen and (min-width: 1010px) and (max-width: 1381px) {
+/*  @import 'media/19-column'; */
+}
+
+/* 1382px */
+@media only screen and (min-width: 1382px) {
+/*  @import 'media/22-column'; */
+}
+
+/* 2x */
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+/*  @import 'media/high-rez'; */
+}
