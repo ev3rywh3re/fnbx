@@ -1,6 +1,6 @@
 <?php
 /**
-* Funbox Base Theme BuddyPress Compatibility
+* FNBX Theme BuddyPress Compatibility
 *
 *
 * Various functions and hooks for BuddyPress. In Progress
@@ -12,7 +12,7 @@ bp-sn-framework
 
 
 *
-* @package Funbox Base Theme
+* @package FNBX Theme
 * @subpackage BuddyPress Compatibility
 */
 
@@ -24,7 +24,7 @@ bp-sn-framework
 
 
 /*
-* Add some default stuff to Funbox for BuddyPress
+* Add some default stuff to FNBX for BuddyPress
 */
 function fnbx_buddypress_init() {
 
@@ -80,7 +80,7 @@ function bp_before_container() {
 
 
 /**
-* Funbox BuddyPress Document Title
+* FNBX BuddyPress Document Title
 *
 * Called in fnbx_document_title() to add BuddyPress specific elements to document title. 
 * Sample taken from: function bp_get_page_title() in bp-core/bp-core-templatetags.php
@@ -124,7 +124,7 @@ function fnbx_bp_page_title_filter( $title_composite_in ) {
 }
 
 /**
-* Funbox BuddyPress Activity Feed link
+* FNBX BuddyPress Activity Feed link
 *
 * Writes head link html tag for BuddyPress sitewide activitiy feeds.
 *
@@ -141,7 +141,7 @@ function fnbx_bp_sitewide_activity_feed_link() {
 }
 
 /**
-* Funbox BuddyPress Search Form
+* FNBX BuddyPress Search Form
 *
 * Writes HTML forms for login and searching. 
 * Sample taken from: bp-sn-framework/header.php
@@ -161,7 +161,7 @@ function fnbx_bp_search_form() {
 }
 
 /**
-* Funbox BuddyPress Log In Form
+* FNBX BuddyPress Log In Form
 *
 * Writes HTML forms for login and searching. 
 * Sample taken from: bp-sn-framework/header.php
@@ -293,7 +293,7 @@ function fnbx_bp_profile_link( $user_id, $content_before = '', $content_after = 
 }
 
 /**
-* Funbox BuddyPress User Info and logout
+* FNBX BuddyPress User Info and logout
 *
 * Writes HTML some current user info and avatar with logout link
 * Sample taken from: bp-sn-parent/header.php
@@ -319,7 +319,7 @@ function fnbx_bp_login_bar_logged_in() {
 }
 
 /**
-* Funbox BuddyPress Search & Login Bar
+* FNBX BuddyPress Search & Login Bar
 *
 * Writes HTML forms for login and searching. 
 * Sample taken from: bp-sn-framework/header.php
@@ -344,7 +344,7 @@ function fnbx_bp_search_login_bar() {
 
 
 /**
-* Funbox Alternate BuddyPress Meta Shortcodes
+* FNBX Alternate BuddyPress Meta Shortcodes
 *
 * Adds elements to shortcode processor using fnbx_meta_shortcodes filter in fnbx_parse_meta_shortcode()
 *
@@ -357,7 +357,7 @@ function fnbx_bp_meta_shortcodes( $shortcodes ) {
 }
 
 /**
-* Funbox Alternate BuddyPress Meta Shortcode Callbacks
+* FNBX Alternate BuddyPress Meta Shortcode Callbacks
 *
 * Adds callbacks for shortcode processoring using fnbx_meta_shortcodes_callbacks filter in 
 * fnbx_parse_meta_shortcode(). Buddypress shortcodes run first so they can override defaults.
@@ -372,7 +372,7 @@ function fnbx_bp_meta_shortcode_callback( $callbacks ) {
 }
 
 /**
-* Funbox Alternate BuddyPress Meta Shortcode Processing
+* FNBX Alternate BuddyPress Meta Shortcode Processing
 *
 * Shortcode processoring for BuddyPress elements. Passes enclosed strings and non-Buddpress
 * shortcodes back. Replaces default author_link shortcode.

@@ -1,13 +1,13 @@
 <?php
 /**
-* Funbox Base Theme Widget Functions
+* FNBX Theme Widget Functions
 * 
-* The Funbox Base Theme does not use sidebar terminology or functionality.
+* The FNBX Theme does not use sidebar terminology or functionality.
 * Widget areas are noted by the plural "widgets" instead of "sidebar".
 * Groups of widgets can be registerd by filter and initialized by the
 * fnbx_generate_widgets function using actions.
 *
-* @package Funbox Base Theme
+* @package FNBX Theme
 * @subpackage Widgets
 */
 
@@ -44,7 +44,7 @@ function fnbx_widgets_init() {
 
 }
 
-// Funbox Widget Generator
+// FNBX Widget Generator
 function fnbx_generate_widgets( $widget_group ) {
  
 	$widget_group = sanitize_title( $widget_group );

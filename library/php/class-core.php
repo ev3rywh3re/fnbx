@@ -3,11 +3,11 @@
 if ( !class_exists( 'fnbx' ) ) {
 
 /**
-* Funbox Base Theme Framework Class
+* FNBX Theme Framework Class
 *
 * This class gathers up 
-* @package Funbox
-* @subpackage Funbox FNBX Class
+* @package FNBX
+* @subpackage FNBX Class
 */
     class fnbx { 
  

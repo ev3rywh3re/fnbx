@@ -1,10 +1,10 @@
 <?php 
 /**
-* Funbox Base Theme Post Thumbnail Support
+* FNBX Theme Post Thumbnail Support
 *
-* Actions, filters, and functions used by the Funbox Base Theme to add post thumbnail support.
+* Actions, filters, and functions used by the FNBX Theme to add post thumbnail support.
 *
-* @package Funbox Base Theme
+* @package FNBX Theme
 * @subpackage Post Thumbnail Support
 */
 
@@ -27,7 +27,7 @@ function fnbx_post_thumbnails_default_setup() {
 }
 
 /**
-* Funbox Post Thumbnail
+* FNBX Post Thumbnail
 *
 * Writes post thumbnail HTML. Basically a wrapper for the_post_thumbnail WP function.
 *
@@ -47,7 +47,7 @@ function fnbx_the_post_thumbnail( $post_id = NULL, $size = 'post-thumbnail', $at
 }
 
 /**
-* Funbox Get Post Thumbnail
+* FNBX Get Post Thumbnail
 *
 * Returns post thumbnail HTML. Basically a wrapper for get_the_post_thumbnail WP function.
 *
@@ -67,7 +67,7 @@ function fnbx_get_the_post_thumbnail( $post_id = NULL, $size = 'post-thumbnail',
 }
 
 /**
-* Funbox Post Thumbnail HTML
+* FNBX Post Thumbnail HTML
 *
 * Filter the wrapper HTML for FNBX post thumbnails. Added by action to WordPress core action: begin_fetch_post_thumbnail_html
 *

@@ -1,10 +1,10 @@
 <?php
 /**
-* Funbox Base Theme Utilities
+* FNBX Theme Utilities
 * 
-* Utility functions used by the Funbox Base Theme
+* Utility functions used by the FNBX Theme
 *
-* @package Funbox Base Theme
+* @package FNBX Theme
 * @subpackage Functions
 */
 
@@ -26,10 +26,10 @@ function fnbx_clone( $object ) {
 }
 
 /**
-* Funbox Date Class Function
+* FNBX Date Class Function
 *
 * Taken from the old Sandbox Theme. The function provides date classes 
-* message pandering for donations for Funbox. Drop a dime in the bucket if you like, but it's really 
+* message pandering for donations for FNBX. Drop a dime in the bucket if you like, but it's really 
 * a ridiculous message to urge you to find or develop a child theme. Laugh, cry, or remove the code!
 *
 * @since 1.0
@@ -45,7 +45,7 @@ function fnbx_date_classes( $t, $p = '' ) {
 }
 
 /**
-* Funbox HTML Tag
+* FNBX HTML Tag
 *
 * Core utility function for the writing and manipulation of HTML tags.
 *
@@ -789,7 +789,7 @@ function fnbx_do_meta_shortcode( $input = '' ) {
 	if ( isset( $meta_content ) ) return $meta_content;
 }
 
-// Funbox element Classes takes element and array and spits out a class= with some dynamic filtering.
+// FNBX element Classes takes element and array and spits out a class= with some dynamic filtering.
 function fnbx_layout_post_open( $the_post = 0 ) {	
 
 	$element_classes = array();
@@ -812,7 +812,7 @@ function fnbx_layout_post_open( $the_post = 0 ) {
 	fnbx_html_tag( $layout_element_defaults );
 }
 
-// Funbox element Classes takes element and array and spits out a class= with some dynamic filtering.
+// FNBX element Classes takes element and array and spits out a class= with some dynamic filtering.
 function fnbx_layout_post_close() {	
 
 	$layout_element_defaults = array(
@@ -828,7 +828,7 @@ function fnbx_layout_post_close() {
 	fnbx_html_tag( $layout_element_defaults );
 }
 
-// Funbox element Classes takes element and array and spits out a class= with some dynamic filtering.
+// FNBX element Classes takes element and array and spits out a class= with some dynamic filtering.
 function fnbx_layout_element_open( $element = '' , $return = false ) {	
 	if ( $element == '' ) return;
 
@@ -858,7 +858,7 @@ function fnbx_layout_element_open( $element = '' , $return = false ) {
 	fnbx_html_tag( $layout_element_defaults );
 }
 
-// Funbox element Classes takes element and array and spits out a class= with some dynamic filtering.
+// FNBX element Classes takes element and array and spits out a class= with some dynamic filtering.
 function fnbx_layout_element_open_class_only( $element = '' ) {	
 	if ( $element == '' ) return;
 
@@ -887,7 +887,7 @@ function fnbx_layout_element_open_class_only( $element = '' ) {
 	fnbx_html_tag( $layout_element_defaults );
 }
 
-// Funbox element Classes takes element and array and spits out a class= with some dynamic filtering.
+// FNBX element Classes takes element and array and spits out a class= with some dynamic filtering.
 function fnbx_layout_element_close( $element = '' ) {	
 
 	$layout_element_defaults = array(
@@ -1163,7 +1163,7 @@ function fnbx_pagelist_box( $list_args = 'sort_column=menu_order&title_li=', $he
 }
 
 /**
-* Funbox Debug
+* FNBX Debug
 *
 * Print some 
 *

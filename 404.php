@@ -4,7 +4,7 @@
 *
 * Template for content not found 404 errors
 *
-* @package Funbox Base Theme
+* @package FNBX Theme
 * @subpackage Template
 */
 ?>
@@ -19,7 +19,7 @@
 */
 
 /**
-* Funbox 404 init we load this early in fnbx_init so we can override later if we want.
+* FNBX 404 init we load this early in fnbx_init so we can override later if we want.
 */
 function fnbx_404_init() {
 	// Doublecheck 404 Not Found page.
@@ -163,15 +163,15 @@ function fnbx_404_report() {
 			/* Run The Loop
 			 *
 			 * If you want to overload this in a child theme then include a file
-			 * called funbox-loop-404.php and that will be used instead.
+			 * called fnbx-loop-404.php and that will be used instead.
 			 * We also put the template part name '404' into the global
 			 * $fnbx->template_part_name so you can use it.
 			 */
 
 			 // Filter to catch this loop template part name into gloabal $fnbx
 			 global $fnbx;
-			 add_filter( 'get_template_part_funbox-loop', array(&$fnbx, 'get_template_part_filter'), 1, 2 );
-			 get_template_part( 'funbox-loop', '404' );
+			 add_filter( 'get_template_part_fnbx-loop', array(&$fnbx, 'get_template_part_filter'), 1, 2 );
+			 get_template_part( 'fnbx-loop', '404' );
 			 
 			?>
 

@@ -4,7 +4,7 @@
 *
 * Template for standard footer.
 *
-* @package Funbox Base Theme
+* @package FNBX Theme
 * @subpackage Template
 */
 ?>

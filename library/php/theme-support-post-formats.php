@@ -1,10 +1,10 @@
 <?php 
 /**
-* Funbox Base Theme Post Formats Support
+* FNBX Theme Post Formats Support
 *
-* Actions, filters, and functions used by the Funbox Base Theme to add post format support.
+* Actions, filters, and functions used by the FNBX Theme to add post format support.
 *
-* @package Funbox Base Theme
+* @package FNBX Theme
 * @subpackage Post Format Support
 */
 

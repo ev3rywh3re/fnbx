@@ -4,7 +4,7 @@
 *
 * Template for comment lists, forms, and controls.
 *
-* @package Funbox Base Theme
+* @package FNBX Theme
 * @subpackage Template
 */
 ?>

@@ -1,10 +1,10 @@
 <?php 
 /**
-* Funbox Base Theme Custom Header Support
+* FNBX Theme Custom Header Support
 *
-* Actions, filters, and functions used by the Funbox Base Theme to custom header support.
+* Actions, filters, and functions used by the FNBX Theme to custom header support.
 *
-* @package Funbox Base Theme
+* @package FNBX Theme
 * @subpackage Custom Header Support
 */
 

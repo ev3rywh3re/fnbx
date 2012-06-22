@@ -1,5 +1,5 @@
 <?php 
-// Make sure Funbox is loaded
+// Make sure FNBX is loaded
 global $fnbx, $wp_query;
 
 /*

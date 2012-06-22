@@ -1,10 +1,10 @@
 <?php 
 /**
-* Funbox Base Theme Post Thumbnail Support
+* FNBX Theme Post Thumbnail Support
 *
-* Actions, filters, and functions used by the Funbox Base Theme to add post thumbnail support.
+* Actions, filters, and functions used by the FNBX Theme to add post thumbnail support.
 *
-* @package Funbox Base Theme
+* @package FNBX Theme
 * @subpackage Post Thumbnail Support
 */
 
@@ -33,7 +33,7 @@ function fnbx_nav_menus_default_setup() {
 
 
 /**
-* Funbox Nav Menu Default HTML
+* FNBX Nav Menu Default HTML
 *
 * Display the default FNBX Nav Menu called "Top Menu" or the first menu in the list. Filter
 * the default arguments using fnbx_generate_default_menu so they can be overridden.

@@ -4,7 +4,7 @@
 *
 * Template for category archives.
 *
-* @package Funbox Base Theme
+* @package FNBX Theme
 * @subpackage Template
 */
 ?>
@@ -17,15 +17,15 @@
 			/* Run The Loop
 			 *
 			 * If you want to overload this in a child theme then include a file
-			 * called funbox-loop-category.php and that will be used instead.
+			 * called fnbx-loop-category.php and that will be used instead.
 			 * We also put the template part name 'category' into the global
 			 * $fnbx->template_part_name so you can use it.
 			 */
 
 			 // Filter to catch this loop template part name into gloabal $fnbx
 			 global $fnbx;
-			 add_filter( 'get_template_part_funbox-loop', array(&$fnbx, 'get_template_part_filter'), 1, 2 );
-			 get_template_part( 'funbox-loop', 'category' );
+			 add_filter( 'get_template_part_fnbx-loop', array(&$fnbx, 'get_template_part_filter'), 1, 2 );
+			 get_template_part( 'fnbx-loop', 'category' );
 			 
 			?>
 

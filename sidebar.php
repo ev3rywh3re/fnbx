@@ -3,13 +3,13 @@
 * Sidebar
 *
 * Template for sidebar.
-* This is empty because Funbox is built to put widgets anywhere.
+* This is empty because FNBX is built to put widgets anywhere.
 * See:
 * /library/php/widgets.php
 * 
 * Sidebar terminology pigeonholes widget usage, but use it if you want.
 *
-* @package Funbox Base Theme
+* @package FNBX Theme
 * @subpackage Template
 */
 ?>

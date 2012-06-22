@@ -1,10 +1,10 @@
 <?php
 /**
-* Funbox Base Theme Filter Functions
+* FNBX Theme Filter Functions
 *
-* Filter functions used in various add_filter by the Funbox Base Theme.
+* Filter functions used in various add_filter by the FNBX Theme.
 *
-* @package Funbox Base Theme
+* @package FNBX Theme
 * @subpackage Hooks
 */
 

@@ -1,15 +1,15 @@
 <?php
 /**
-* Funbox Base Theme Template Functions
+* FNBX Theme Template Functions
 *
-* Collection of functions used by the Funbox Base Theme.
+* Collection of functions used by the FNBX Theme.
 *
-* @package Funbox Base Theme
+* @package FNBX Theme
 * @subpackage Functions
 */
 
 /*
-* Funbox Doctype
+* FNBX Doctype
 *
 * Writes the theme doctype which can be modified by the fnbx_doctype
 * and fnbx_doctype_text filters.
@@ -54,7 +54,7 @@ function fnbx_head_meta_viewport() {
 }
 
 /*
-* Funbox Meta Content Type
+* FNBX Meta Content Type
 *
 * Writes the theme content type and character set to head.
 *
@@ -69,7 +69,7 @@ function fnbx_head_meta_content_type() {
 }
 
 /*
-* Funbox Meta Template
+* FNBX Meta Template
 *
 * Writes the template type to head and gives child theme credit.
 *
@@ -85,7 +85,7 @@ function fnbx_head_meta_template() {
 }
 
 /*
-* Funbox Meta Robots
+* FNBX Meta Robots
 *
 * Writes the robots meta to head and tries to set indexing. 
 * Index rules can be manipulated by the fnbx_head_meta_robots filter.
@@ -135,7 +135,7 @@ function fnbx_head_meta_robots() {
 }
 
 /*
-* Funbox Meta Author
+* FNBX Meta Author
 *
 * Writes the author meta to head giving post author credit. 
 *
@@ -170,7 +170,7 @@ function fnbx_head_meta_author() {
 }
 
 /*
-* Funbox Meta Copyright
+* FNBX Meta Copyright
 *
 * Writes the copyright meta with current year to head. 
 *
@@ -191,7 +191,7 @@ function fnbx_head_meta_copyright() {
 }
 
 /**
-* Funbox Meta Revised
+* FNBX Meta Revised
 *
 * Write meta revised tag to head.
 *
@@ -208,7 +208,7 @@ function fnbx_head_meta_revised() {
 }
 
 /**
-* Funbox Link Favicon
+* FNBX Link Favicon
 *
 * Function used to add HTML to head for favicon stored in images directory.
 *
@@ -235,7 +235,7 @@ function fnbx_head_link_favicon() {
 }
 
 /**
-* LEGACY: Funbox Link Stylesheet
+* LEGACY: FNBX Link Stylesheet
 *
 * Write link stylesheet tag to head. This is a legacy function. Only useful writing the link in special applications.
 * You should use fnbx_setup_stylsheet() and wp_enqueue_style()
@@ -253,17 +253,17 @@ function fnbx_head_link_stylesheet() {
 }
 
 /**
-* Funbox Stylesheet Setup
+* FNBX Stylesheet Setup
 *
-* Used to setup the CSS Style sheet link for wp_head(). Needs to be called early and usuall in funbox-loader.php
+* Used to setup the CSS Style sheet link for wp_head(). Needs to be called early and usuall in fnbx-loader.php
 *
 * @since 1.0
 */
 function fnbx_setup_stylesheet() {
     if ( !is_admin() ) {
 		$theme  = get_theme( get_current_theme() );
-		wp_register_style( 'funbox-style', get_stylesheet_uri(), false, $theme['Version'] );
-		wp_enqueue_style( 'funbox-style' );
+		wp_register_style( 'fnbx-style', get_stylesheet_uri(), false, $theme['Version'] );
+		wp_enqueue_style( 'fnbx-style' );
     }
  }
 
@@ -460,7 +460,7 @@ function fnbx_default_description() {
 }
 
 /**
-* Funbox Base Theme Document Title
+* FNBX Theme Document Title
 *
 * Function for writing HTML document title hopefully with decent SEO.
 *
@@ -516,9 +516,9 @@ function fnbx_document_title() {
 }
 
 /**
-* Funbox Post and Page Entry Titles
+* FNBX Post and Page Entry Titles
 *
-* Writes post and page titles using Funbox Base Theme shortcode function. Shortcode can be filtered
+* Writes post and page titles using FNBX Theme shortcode function. Shortcode can be filtered
 * with fnbx_entry_title_shortcode filter and HTML block can be filtered using
 * fnbx_entry_title filter.
 *
@@ -543,9 +543,9 @@ function fnbx_entry_title() {
 }
 
 /**
-* Funbox Post and Page Entry Dates
+* FNBX Post and Page Entry Dates
 *
-* Writes post and page dates using Funbox Base Theme shortcode function. HTML block can be filtered using
+* Writes post and page dates using FNBX Theme shortcode function. HTML block can be filtered using
 * fnbx_entry_date filter.
 *
 * @since 1.0
@@ -567,9 +567,9 @@ function fnbx_entry_date() {
 }
 
 /**
-* Funbox Parent Titles
+* FNBX Parent Titles
 *
-* Writes HTML for the parent of current entry using Funbox Base Theme shortcode function. Shortcode can
+* Writes HTML for the parent of current entry using FNBX Theme shortcode function. Shortcode can
 * be filtered using the fnbx_entry_parent_title_shortcode filter and HTML block can be filtered using
 * fnbx_entry_parent_title filter.
 *
@@ -595,7 +595,7 @@ function fnbx_entry_parent_title() {
 }
 
 /**
-* Funbox Page Titles
+* FNBX Page Titles
 *
 * Writes HTML for page titles used on archive, tag, author, and search areas. HTML block can be 
 * filtered using fnbx_page_title_defaults filter.
@@ -653,7 +653,7 @@ function fnbx_page_title_default() {
 }
 
 /**
-* Funbox Page Description HTML
+* FNBX Page Description HTML
 *
 * Writes HTML for descriptions. Only used now for author and category discriptions.
 *
@@ -698,7 +698,7 @@ function fnbx_page_description_default() {
 }
 
 /**
-* Funbox Entry Meta Box HTML
+* FNBX Entry Meta Box HTML
 *
 * Writes HTML post meta information. Uses fnbx_parse_meta_shortcode() function for dynamic meta
 * information. Can be filtered using fnbx_post_meta_box filter.
@@ -725,7 +725,7 @@ function fnbx_post_meta_box( $meta_string = '' ) {
 }
 
 /**
-* Funbox Entry Meta Date HTML
+* FNBX Entry Meta Date HTML
 *
 * Writes HTML post meta date information. Passes string to fnbx_post_meta_box function for dynamic meta
 * information. Can be filtered using fnbx_post_meta_date filter and fnbx_post_meta_box filter.
@@ -744,7 +744,7 @@ function fnbx_post_meta_date() {
 }
 
 /**
-* Funbox Entry Meta Edit HTML
+* FNBX Entry Meta Edit HTML
 *
 * Writes HTML post edit links using fnbx_parse_meta_shortcode() shortcodes. Can be filtered
 * using fnbx_post_meta_edit filter.
@@ -762,7 +762,7 @@ function fnbx_post_meta_edit() {
 }
 
 /**
-* Funbox Brief Entry Meta HTML
+* FNBX Brief Entry Meta HTML
 *
 * Writes HTML post meta information in brief format. Passes string to fnbx_post_meta_box function for dynamic meta
 * information. Can be filtered using fnbx_post_meta_brief filter and fnbx_post_meta_box filter.
@@ -780,7 +780,7 @@ function fnbx_post_meta_brief() {
 }
 
 /**
-* Funbox Verbose Entry Meta HTML
+* FNBX Verbose Entry Meta HTML
 *
 * Writes HTML post meta information in verbose format. Passes string to fnbx_post_meta_box function for dynamic meta
 * information. Can be filtered using fnbx_post_meta_verbose filter and fnbx_post_meta_box filter.
@@ -798,7 +798,7 @@ function fnbx_post_meta_verbose() {
 }
 
 /**
-* Funbox Automatic Previous and Next Posts
+* FNBX Automatic Previous and Next Posts
 *
 * Writes HTML for navigation between post and post pages that would appear above post entry lists.
 *
@@ -817,7 +817,7 @@ function fnbx_post_navigation_box_auto( $location ) {
 }
 
 /**
-* Funbox Automatic Previous and Next Comment Above HTML
+* FNBX Automatic Previous and Next Comment Above HTML
 *
 * Writes HTML for navigation between comment pages that would appear above comment lists.
 *
@@ -829,7 +829,7 @@ function fnbx_comment_navigation_box_above() {
 }
 
 /**
-* Funbox Automatic Previous and Next Comment Below HTML
+* FNBX Automatic Previous and Next Comment Below HTML
 *
 * Writes HTML for navigation between comment pages that would appear below comment lists.
 *
@@ -841,7 +841,7 @@ function fnbx_comment_navigation_box_below() {
 }
 
 /**
-* Funbox List Comments
+* FNBX List Comments
 *
 * Writes HTML block for comment lists. Display can be filtered using fnbx_comment_list filter.
 *
@@ -872,7 +872,7 @@ function fnbx_comment_list_default() {
 }
 
 /**
-* Funbox Search Form
+* FNBX Search Form
 *
 * Writes HTML block standard search form.
 *
@@ -891,7 +891,7 @@ function fnbx_search_form() {
 }
 
 /**
-* Funbox The Content
+* FNBX The Content
 *
 * Writes content. Basically a wrapper for the_content WP function.
 *
@@ -906,7 +906,7 @@ function fnbx_the_content() {
 }
 
 /**
-* Funbox The Content with More
+* FNBX The Content with More
 *
 * Writes content using more separator. Basically a wrapper for the_content WP function with a global $more override.
 *
@@ -923,7 +923,7 @@ function fnbx_the_content_more() {
 }
 
 /**
-* Funbox The Excerpt
+* FNBX The Excerpt
 *
 * Writes excerpt. Basically a wrapper for the_excerpt WP function.
 *
@@ -936,7 +936,7 @@ function fnbx_the_excerpt() {
 }
 
 /**
-* Funbox Attachment Content
+* FNBX Attachment Content
 *
 * Writes HTML block for attachments content.
 *
@@ -972,7 +972,7 @@ function fnbx_attachment_content() {
 }
 
 /**
-* Funbox Image Content
+* FNBX Image Content
 *
 * Writes HTML block for image content.
 *
@@ -1008,7 +1008,7 @@ function fnbx_image_content() {
 }
 
 /**
-* Funbox The Comments Separated
+* FNBX The Comments Separated
 *
 * Handles loading of the comments.php template with comments separated.
 *
@@ -1020,7 +1020,7 @@ function fnbx_comments_template_separate() {
 }
 
 /**
- * Funbox Comments Number
+ * FNBX Comments Number
  *
  * Taken from wordpress comments_number() includes an echo option
  * Display the language string for the number of comments the current post has.
@@ -1056,9 +1056,9 @@ function fnbx_comments_number( $zero = false, $one = false, $more = false, $do_e
 
 
 /**
-* Funbox Footer Content
+* FNBX Footer Content
 *
-* Writes HTML block for footer giving credit to Funbox and WordPress.
+* Writes HTML block for footer giving credit to FNBX and WordPress.
 *
 * @since 1.0
 * @echo string
@@ -1076,10 +1076,10 @@ function fnbx_footer_default() {
 
 	$fnbx_link = fnbx_html_tag( array (
 		'tag' => 'a',
-		'href' => 'http://funroe.net/projects/funbox-theme/',
-		'title' =>  __( 'Funbox Base Theme for WordPress', 'fnbx_lang' ),
+		'href' => 'http://funroe.net/projects/fnbx-theme/',
+		'title' =>  __( 'FNBX Theme for WordPress', 'fnbx_lang' ),
 		'rel' => 'designer',
-		'tag_content' => __( 'Funbox', 'fnbx_lang' ),
+		'tag_content' => __( 'FNBX', 'fnbx_lang' ),
 		'return' => true
 	) );
 
