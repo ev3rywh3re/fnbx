@@ -222,7 +222,7 @@ function fnbx_head_link_favicon() {
 	$favicon_default = array(
 		'tag' => 'link',
 		'tag_type' => 'single',
-		'href' => FNBX_CORE_URL . '/library/images/logos/favicon.ico',
+		'href' => FNBX_CORE_URL . '/images/favicon.ico',
 		'type' => 'image/x-icon'
 	);
 	
@@ -235,31 +235,13 @@ function fnbx_head_link_favicon() {
 }
 
 /**
-* LEGACY: FNBX Link Stylesheet
-*
-* Write link stylesheet tag to head. This is a legacy function. Only useful writing the link in special applications.
-* You should use fnbx_setup_stylsheet() and wp_enqueue_style()
-*
-* @since 1.0
-* @echo string
-*/
-function fnbx_head_link_stylesheet() {
-	// Stylesheet
-	fnbx_write_link_tag( array( 
-		'rel' => 'stylesheet',
-		'type' => 'text/css',
-		'href' => get_stylesheet_uri()
-	) );	
-}
-
-/**
 * FNBX Stylesheet Setup
 *
 * Used to setup the CSS Style sheet link for wp_head(). Needs to be called early and usuall in fnbx-loader.php
 *
 * @since 1.0
 */
-function fnbx_setup_stylesheet() {
+function fnbx_stylesheet_init() {
     if ( !is_admin() ) {
 		$theme  = get_theme( get_current_theme() );
 		wp_register_style( 'fnbx-style', get_stylesheet_uri(), false, $theme['Version'] );

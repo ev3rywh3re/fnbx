@@ -1,7 +1,7 @@
 <?php
 
 // Load Stylesheet CSS as soon as possible;
-add_action( 'wp', 'fnbx_setup_stylesheet' );
+add_action( 'wp', 'fnbx_stylesheet_init' );
 
 /*
 * FNBX Theme Default Actions
