@@ -1,17 +1,19 @@
 /*
-THEME NAME: Diary Funbox
-THEME URI: http://funroe.net
-DESCRIPTION: A responsive fork of a diary book theme.
+THEME NAME: FNBX Theme
+THEME URI: http://funroe.net/projects/fnbx-theme/
+DESCRIPTION: FNBX is a complicated yet useful base theme designed to build child themes. It's for the grind!
 VERSION: 1.0
 AUTHOR: Jess Planck
 AUTHOR URI: http://funroe.net/
-TEMPLATE: funbox
+LICENSE: GNU General Public License v2.0
+LICENSE URI: http://www.gnu.org/licenses/gpl-2.0.html
+TAGS:
 */
 
 /* 
 Copyright (c) Jess Planck (http://funroe.net)
 
-The Funbox Base Theme is released under the GNU General Public License.
+The FNBX Theme is released under the GNU General Public License.
 
 This is a WordPress Theme (http://wordpress.org). WordPress is free
 software: you can redistribute it and/or modify it under the terms of
@@ -26,7 +28,6 @@ General Public License for more details.
 
 You should have received a copy of the GNU General Public License along
 with WordPress.  If not, see <http://www.gnu.org/licenses/>.
-
 */
 
 /* Imports --------------------------------------------------------------*/
@@ -38,26 +39,26 @@ with WordPress.  If not, see <http://www.gnu.org/licenses/>.
 $total-columns: 19; 
 $column-width: 2.626em;
 $gutter-width: .62em;
-$grid-padding: .382em;
+$grid-padding: 0;
 $show-grid-backgrounds: $show_grids;
 
-body {
-	background-repeat: repeat-x;
-	background-position: top left; 
-}
+/*
+Make Static or Magic
+*/
+$container-style: static;
 
 .wrapper- {
 	@include container;
 	@include susy-grid-background;
 }
 	
-.header-diary-wrapper- {
+.header-wrapper- {
 	width: 100%;
 }
 	
 /* Layout */
 
-.header-diary- {
+.header- {
 	@include container;
 	@include susy-grid-background;
 	background-repeat: no-repeat;
@@ -72,24 +73,17 @@ body {
 	
 .content- {
 	@include span-columns(13.1, 14);
-	@include pre(.5);
 }
 
 .widgets-primary- {
 	@include span-columns(4);
-	@include omega;
-	
-	padding: 0 1.2em 0 0;
-	
+	@include omega;	
 	font-size: 94%;
 }
 	
 .widgets-secondary- {
 	@include span-columns(4);
-	@include omega;
-	
-	padding: 0 1.2em 0 0;
-	
+	@include omega;	
 	font-size: 94%;	
 	clear: right;		
 }
@@ -99,17 +93,13 @@ body {
 	.wrapper- {
 		@include container;
 		@include susy-grid-background;
-		background: transparent url('library/images/wrapper-notebook-body-22.png') repeat-y left 9em;
 	}
 
 /* Layout */
 
-	.header-diary- {
+	.header- {
 		@include container;
 		@include susy-grid-background;
-		background: transparent url('library/images/header-notebook-top-22.png');
-		background-repeat: no-repeat;
-		background-position: 10em left; 
 		height: 15em;
 	}
 
@@ -121,15 +111,11 @@ body {
 
 	.content- {
 		@include span-columns(14.8, 15.9);
-		@include pre(.5);
 	}
 
 	.widgets-primary- {
 		@include span-columns(5.1);
-		@include omega;
-		padding: 0 2em 0 0;
-	
-		font-size: 94%;
+		@include omega;	
 		/* See container border  */
 	
 	}
@@ -137,7 +123,6 @@ body {
 	.widgets-secondary- {
 		@include span-columns(6);
 		@include omega;
-		font-size: 94%;
 		clear: right;		
 	}
 
@@ -151,7 +136,7 @@ body {
 		
 	/* Layout */
 	
-	.header-diary- {
+	.header- {
 		@include container;
 		@include susy-grid-background;	
 		background-repeat: no-repeat;
@@ -161,28 +146,18 @@ body {
 	
 	.container- {
 		@include span-columns(13);
-		font-size: 96%;
 	}
 	
 	.content- {
 		@include span-columns(12.1, 13);
-		@include pre(.5);
 	}
 	
 	.widgets-primary- {
-		@include span-columns(4);
-		
-		padding: 0 1.2em 0 0;
-		
-		font-size: 94%;
+		@include span-columns(4);		
 	}
 	
 	.widgets-secondary- {
-		@include span-columns(4);
-		
-		padding: 0 1.2em 0 0;
-		
-		font-size: 94%;	
+		@include span-columns(4);		
 		clear: right;		
 	}
 }
@@ -195,7 +170,7 @@ body {
 		
 	/* Layout */
 	
-	.header-diary- {
+	.header- {
 		@include container;
 		@include susy-grid-background;	
 		background-repeat: no-repeat;
@@ -205,7 +180,6 @@ body {
 	
 	.container- {
 		@include span-columns(8);
-		font-size: 96%;
 	}
 	
 	.content- {
@@ -214,14 +188,10 @@ body {
 	
 	.widgets-primary- {
 		@include span-columns(8);
-				
-		font-size: 94%;
 	}
 	
 	.widgets-secondary- {
 		@include span-columns(8);
-				
-		font-size: 94%;	
 		clear: right;		
 	}
 }
@@ -234,17 +204,13 @@ body {
 		
 	/* Layout */
 	
-	.header-diary- {
+	.header- {
 		@include container;
 		@include susy-grid-background;	
-		background-repeat: no-repeat;
-		background-position: 10em left; 
-		height: 15em;
 	}
 	
 	.container- {
 		@include span-columns(6);
-		font-size: 96%;
 	}
 	
 	.content- {
@@ -253,14 +219,10 @@ body {
 	
 	.widgets-primary- {
 		@include span-columns(6);
-				
-		font-size: 94%;
 	}
 	
 	.widgets-secondary- {
 		@include span-columns(6);
-				
-		font-size: 94%;	
 		clear: right;		
 	}
 }

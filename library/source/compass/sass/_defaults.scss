@@ -1,118 +1,14 @@
 /* Defaults - START */
 
 body {
-	font-family: 'Lato', Helvetica, Arial, sans serif;	
+	background-position: top left; 
+	background-repeat: repeat-x;
 	color: #000000;
-	padding: 0;
+	font-family: Helvetica, Arial, sans serif;	
 	margin: 0;
+	padding: 0;
 	width: 100%;
 }
-
-/* Alignment */
-
-.left, .alignleft {
-	display: inline;
-	float: left;
-	margin-right: .8em;
-}
-
-.right, .alignright {
-	display: inline;
-	float: right;
-	margin-left: .8em;
-}
-
-.aligncenter {
-	clear: both;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-/* Responsive Defaults */
-
-.content- {
-	width: auto;
-}
-
-.entry-content img,
-.comment-content img,
-.widget img {
-	max-width: 97.5%; /* Fluid images for posts, comments, and widgets */
-}
-
-img[class*="align"],
-img[class*="wp-image-"] {
-	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
-}
-
-img.size-full {
-	max-width: 97.5%;
-	width: auto; /* Prevent stretching of full-size images with height and width attributes in IE8 */
-}
-
-/* Layout */
-
-/* Header */
-
-.header- .blog-title- {
-	font-family: 'Fondamento', cursive;
-	font-size: 120%;
-	margin: 0 auto;
-}
-
-/* Widget Group Styles - START */
-
-.widgets- {
-	margin: 0;
-	padding: 0;
-}
-
-.widgets- ul, .widgets- ul li  {
-	list-style-type: none;
-	text-align: left;
-	margin: 0;
-	padding: 0;
-}
-
-.widgets- h3, .widgets- h4 {
-	font-size: 120%;
-	font-weight: 400;
-	padding: .4em 0;
-	margin: .4em 0;
-	border-bottom: 1px solid #afafaf;
-}
-
-.widgets- .widgettitle {
-	font-family: 'Cardo', serif;
-	padding: 0 0 .4em 0;
-	border-bottom: 1px solid #9F9F9F;
-	margin: 0 0 0.6em 0;
-}
-
-.widgets- li.widget {
-	margin: 1em 0;
-}
-
-.widgets- li.widget ul {
-	margin: 0 0 0 .5em;
-}
-
-.widgets- li.widget li {
-	margin: .5em 0 .5em .5em;
-}
-
-.widgets- .widget_search {
-	padding: .2em;
-}
-
-/* Widget Group Styles - END */
-
-/* Defaults - END */
-
-/* START ----OLD---- */
-
-
 
 /* Interactive HTML Styles */
 
@@ -129,15 +25,48 @@ a:hover {
 	text-decoration: none;
 }
 
+a.nofx {
+	background: none;
+	border: none;
+}
+
+a.nofx:hover {
+	background: none;
+	border: none;
+}
+
 /* Content Common text blocks */	
 
-.content- code, .content- pre {
+code, pre {
 	font-family: "courier new", courier, monospace;
 }
 
-input.text {
+/* Forms and form controls */
+
+legend {
+	font-weight: 400;
+}
+
+label {
+	display: block;
+}
+
+input, textarea {
+	margin: .2em;
 	padding: .2em;
-	border: 1px solid #999999;	
+	border: 1px solid #666;
+}
+
+textarea {
+	clear: both;
+}
+
+input:hover, textarea:hover {
+  border: 1px solid #333;
+}
+ 
+input:focus, textarea:focus {
+  border: 1px solid #d1d1d1;
 }
 
 /* Heading Styles */
@@ -176,13 +105,6 @@ h6 {
 /* END defaults */
 
 /* START Multi-purpose Elements */
-div.nav-previous {
-	float: left;
-}
-
-div.nav-next {
-	float: right;
-}
 
 .box-0x0 {
 	width: 0;
@@ -202,7 +124,59 @@ div.nav-next {
 	clear: left;
 }
 
+.clear-min {
+	clear: both;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+
 /* END Multi-purpose Elements */
+
+/* Alignment */
+
+.left, .alignleft {
+	display: inline;
+	float: left;
+	margin-right: .8em;
+}
+
+.right, .alignright {
+	display: inline;
+	float: right;
+	margin-left: .8em;
+}
+
+.center, .aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Responsive Defaults */
+
+.content- {
+	width: auto;
+}
+
+.entry-content img,
+.comment-content img,
+.widget img {
+	max-width: 97.5%; /* Fluid images for posts, comments, and widgets */
+}
+
+img[class*="align"],
+img[class*="wp-image-"] {
+	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+}
+
+img.size-full {
+	max-width: 97.5%;
+	width: auto; /* Prevent stretching of full-size images with height and width attributes in IE8 */
+}
+
+/* Layout */
 
 /* START Header */
 
@@ -211,10 +185,9 @@ div.nav-next {
 }
 
 .header- .blog-title- {
-    font-size: 225%;	
-	line-height: 1.1em;
-	margin: 0;
-	padding: .2em;	
+    font-size: 225%;
+/* don't forget this is sometimes an h1 */    
+	margin: 0 auto;    	
 }
 
 .header- .blog-title- a, .header- .blog-title- a:link, .header- .blog-title- a:active, .header- .blog-title- a:visited {
@@ -225,13 +198,9 @@ div.nav-next {
 	text-decoration: underline;
 }
 
-.header- .blog-description- {
-	padding: 0 0 0 1em;	
-}
-
 /* END Header */
 
-/* START Widget Group Styles */
+/* Widget Group Styles - START */
 
 .widgets- {
 	margin: 0;
@@ -255,25 +224,33 @@ div.nav-next {
 	margin: 0 0 0.6em 0;
 }
 
-.widgets-primary- li.widget {
+.widgets- li.widget {
 	margin: 1em 0;
 }
 
-.widgets-primary- li.widget ul {
+.widgets- li.widget ul {
 	margin: 0 0 0 .5em;
 }
 
-.widgets-primary- li.widget li {
+.widgets- li.widget li {
 	margin: .5em 0 .5em .5em;
 }
 
-.widget_search {
+.widgets- .widget_search {
 	padding: .2em;
 }
 
-/* END Widget Group Styles */
+/* Widget Group Styles - END */
 
-/* START Post Navigation Styles */
+/* Footer - START */
+
+.footer- {
+	clear: both;
+}
+
+/* Footer - END */
+
+/* Post Navigation Styles - START  */
 
 .navigation {
 	/* 
@@ -281,36 +258,23 @@ div.nav-next {
 	requries both "width: x" and "overflow: auto" to clear
 	interior elements for box creation!
 	*/
-	float: right;
-	width: 16em;
-	padding: .2em .2em .4em .2em;
 	font-size: 92%;
-	font-style: italic;
-	text-align: center;
-}
-
-.navigation a, .navigation a:link, .navigation a:active, .navigation a:visited {
-	color: #ccc;
-}
-
-.navigation a:hover {
-	color: #000;
+	clear: both;
 }
 
 .navigation .nav-previous {
-	
+	float: left;
 }
 
 .navigation .nav-next {
-	padding: .8em 0 0 0;
+	float: right;
 }
 
 .navigation .nav-meta {
 	font-weight: bold;
-	color: #ddd;
 }
 
-/* END Post Navigation Styles */
+/* Post Navigation Styles - END  */
 
 /* START Post styles */
 
@@ -318,8 +282,11 @@ div.nav-next {
     padding-top: .2em;
 }
 
-.entry-title, .entry-title a, .entry-title a:visited {
-	font-family: 'Cardo', serif;
+.entry-title {
+	clear: both;
+}
+
+.entry-title a, .entry-title a:visited {
     text-decoration: none;
 }
 
@@ -328,7 +295,6 @@ div.nav-next {
 }
 
 .entry-date {
-	font-family: 'Allura', cursive;
 	font-size: 110%;
 }
 
@@ -343,28 +309,6 @@ div.nav-next {
 .entry-content {
     line-height: 1.4em;
     clear: both;
-}
-
-.entry-content p {
-    line-height: 1.4em;
-}
-
-.entry-content img {
-	max-width: 460px;
-	margin: .2em;
-}
-
-.entry-content img.center {
-	display: block;
-	margin: 0.4em auto;
-}
-
-.entry-content img.alignright {
-	margin: 0.4em 0 0.4em 1.1em
-}
-
-.entry-content img.alignleft {
-	margin: 0.4em 1.1em 0.4em 0;
 }
 
 .entry-meta {
@@ -390,6 +334,10 @@ div.nav-next {
 	font-weight: normal;
 }
 
+.link-pages {
+	clear: both;
+}
+
 /* END Post styles */
 
 /* START WordPress Image / Gallery Styles */
@@ -400,10 +348,7 @@ div.nav-next {
 }
 
 .wp-caption {
-	margin: .4em;
-	padding: .2em;
 	text-align: center;
-	border: 1px solid #ccc;
 }
 
 .wp-caption .wp-caption-text {
@@ -412,7 +357,6 @@ div.nav-next {
 	font-size: 76%;
 	text-align: center;
 	line-height: 1.2em;
-	border-top: 1px solid #efefef;
 }
 
 /* END WordPress Image / Gallery Styles */
@@ -471,74 +415,21 @@ div.nav-next {
 
 /* END Comment Styles */
 
-/* Start Forms and Controls */
+/* START - Plugin Styles */
 
-legend {
-	font-weight: 400;
-}
+/* START - Plugin Contact Form 7 & Custom Form Controls */
 
-label {
-	display: block;
-}
-
-input, textarea {
-	margin: .2em;
-	padding: .2em;
-	border: 1px solid #666;
-}
-
-textarea {
-	clear: both;
-}
-
-input:hover, textarea:hover {
-  border: 1px solid #333;
-}
- 
-input:focus, textarea:focus {
-  border: 1px solid #d1d1d1;
-}
-
-.fnbx_form_row {
-	margin: .2em 0;
-	clear: both;
-}
-
-.fnbx_form_row label {
-	width: 12em;
-	float: left;
-	padding: 2px;
-	font-weight: bold;
-	text-align: right;
-}
-
-.fnbx_textarea label {
-	width: 100%;
-	float: none;
-}
-
-.fnbx_form_row .fnbx_form_element {
-	padding: 2px;
-}
-
-/* START - Plugin Contact Form 7 - Form Controls */
-
-div.wpcf7 {
-	width: 36em;
-}
-
-div.form-container {
+.form-container {
 	position: relative;
-	width: 36em;
 	padding: .2em;
 }
 
-div.form-container form {
+.form-container form {
 	margin: 0;
 	padding: 0;
 }
 
-div.form-container .form-note {
+.form-container .form-note {
 	padding: 2px;
 	clear: both;
 }
@@ -586,214 +477,9 @@ div.form-container .form-note {
 	display: block;
 	margin: .2em 0 .2em .2em;
 	float: left;
-	width: 18em;
 }
 
-.form-input .your-message textarea {
-	width: 20em;
-}
-
-/* END - Plugin Contact Form 7 - Form Controls */
-
-/* END - Plugin Styles */
-
-/* START Hidden Elements */
-
-/* START Ad styles */
-
-div.ad-wide-clear {
-	margin: .2em 0;
-	padding: .2em 0;
-	clear: both;
-}
-
-div.ad-right {
-	float: right;
-	padding: .2em;
-}
-
-div.ad-left {
-	float: left;
-	padding: .2em;
-}
-
-div.ad-sidebar {
-	margin: .2em 0;
-	padding: .2em 0;
-	background: #fff;
-	clear: both;
-}
-
-/* END Ad styles */
-
-/* START - Custom Classes */
-
-.logo-container a, .logo-container a:link, .logo-container a:hover, .logo-container a:visited {
-	border: none;
-	text-decoration: none;
-}
-
-.menu-primary- ul {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-}
-
-.menu-primary- ul li.item-logo {
-	float: left;
-	margin: 0;
-	padding: 0;
-}
-
-.menu-primary- ul li.item-site {
-	background: #fff;
-	float: left;
-	margin: 0 0 0 2em;
-	padding: .6em 0 0 0;	
-	font-family: "madawaska-1","madawaska-2", "Bookman Old Style","Serifa BT","URW Bookman L","itc bookman",times,serif;
-	font-style: italic;
-	font-weight: 700;
-	letter-spacing: .05em;
-}
-
-.menu-primary- ul li ul {
-	display: none;
-}
-
-.menu-primary- a {
-	display: block;
-	padding: 0 .4em .4em .2em;
-	border: none;
-	text-decoration: none;
-	background: transparent;
-}
-
-.menu-primary- a, .menu-primary- a:link, .menu-primary- a:visited, .menu-primary- a:active {
-	color: #000;
-}
-
-.menu-primary- a:hover {
-	text-decoration: underline;
-}
-
-.page-posts .post {
-	padding-top: .2em;
-}
-
-.page-posts .entry-title {
-	font-size: 140%;
-}
-
-.page-posts .entry-date {
-	float: none;
-	border: none;
-}
-
-.page-posts .entry-date abbr.published {
-	display: block;
-	cursor: default;
-	text-align: left;
-	margin: .2em 0 .2em .2em;
-	padding: .2em;
-	color: #AFAFAF;
-	border: 0;
-}
-
-.icon-exclamation-black {
-	background: url('library/images/items-icons.png') no-repeat 0px 0px;
-}
-
-.icon-exclamation-white {
-	background: url('library/images/items-icons.png') no-repeat 0px -40px;
-}
-
-.icon-down-arrow-black {
-	background: url('library/images/items-icons.png') no-repeat 0px -80px;
-}
-
-.icon-down-arrow-white {
-	background: url('library/images/items-icons.png') no-repeat 0px -120px;
-}
-
-.funroe_notice {
-	margin: 6px;
-	padding: 5px 2px 5px 26px;
-	color: #333;
-	background: #FFF url("images/funroe_exclaimation.png") no-repeat 4px center;
-}
-
-.funroe_download {
-	margin: 2px;
-	padding: 8px 2px 2px 30px;
-	color: #ffffff;
-	border: 1px solid #272546;
-	background: #1a1a1a url("images/download-arrow.png") no-repeat 4px 2px;
-}
-
-.funroe_donate {
-	margin: 2px;
-	padding: 8px 2px 2px 30px;
-	color: #ffffff;
-	border: 1px solid #272546;
-	background: #1a1a1a url("images/graphic-dollar-sign.png") no-repeat 4px 2px;
-}
-
-.funroe_download .funroe_download_link {
-	margin-bottom: 8px;
-}
-
-.funroe_download .funroe_download_link a {
-	color: #ffffff;
-	font-weight: bold;
-}
-
-.funroe_download .funroe_download_link a:hover {
-	color: #cccccc;
-}
-
-.funroe_donate_slide {
-	margin: 4px 0 0 -26px;
-	padding: 2px;
-	color: #000000;
-	background: #FFF;
-	border: 1px solid #000;
-}
-
-.funroe_donate_slide fieldset {
-	float: left;
-	margin: 1px;
-	padding: 2px;
-	background: #FFF;
-	border: none;
-}
-
-.funroe_donate_form {
-	margin: 10px 4px 10px 4px;
-	padding: 2px;
-	color: #000000;
-	background: #ffffff;
-	border: 1px solid #000;
-}
-
-.funroe_donate_slide form input, .funroe_donate_slide form select {
-	margin: 1px;
-	padding: 2px;
-	background: white;
-	border: 1px solid #ccc;
-}
-
-.funroe_donate_slide form input:hover, .funroe_donate_slide form select:hover {
-  border: 1px solid #333333;
-}
-
-.funroe_donate_slide form input:focus, .funroe_donate_slide form select:focus {
-  border: 1px solid #d1d1d1;
-}
-
-.funroe_hidden {
-	display: none;
-}
-/* END - Custom Classes */
+/* END - Plugin Contact Form 7 & Custom Form Controls */
 
 /* START: List Posts */
 
@@ -825,7 +511,6 @@ div.ad-sidebar {
 	border: 2px solid #ccc;
 }
 
-
 .list-posts-news .list-posts-item-content {
 	clear: right;
 }
@@ -836,45 +521,37 @@ div.ad-sidebar {
 
 /* END: List Posts */
 
-/* START Multi-purpose Elements */
-/* General class elements might need to be last or we could accidentally take precedent with earlier modificaitons */
+/* START Ad styles */
 
-.left, .alignleft, .entry-content .left, .entry-content .alignleft {
-	float: left;
+div.ad-wide-clear {
+	margin: .2em 0;
+	padding: .2em 0;
+	clear: both;
 }
 
-.right, .alignright, .entry-content .right, .entry-content .alignright {
+div.ad-right {
 	float: right;
+	padding: .2em;
 }
 
-.center, .aligncenter, .entry-content .center, .entry-content .aligncenter {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+div.ad-left {
+	float: left;
+	padding: .2em;
 }
 
-.clear, .clearer {
+div.ad-sidebar {
+	margin: .2em 0;
+	padding: .2em 0;
+	background: #fff;
 	clear: both;
 }
 
-.clear-min {
-	clear: both;
-	width: 0;
-	height: 0;
-	overflow: hidden;
-}
+/* END Ad styles */
 
-a.nofx {
-	background: none;
-	border: none;
-}
+/* END - Plugin Styles */
 
-a.nofx:hover {
-	background: none;
-	border: none;
-}
-
-/* END Multi-purpose Elements */
+/* START - Custom Classes */
+/* END - Custom Classes */
 
 /* START Hidden Elements */
 
@@ -887,6 +564,7 @@ a.nofx:hover {
 /* START Conditional Elements */
 
 /* Widgets Inactive (Primary & Secondary) - Container goes full width */
+
 body.widgets-primary-inactive.widgets-secondary-inactive .container- {
 	float: none;
 	width: auto;
@@ -896,12 +574,7 @@ body.widgets-primary-inactive.widgets-secondary-inactive .container- {
 /* END Conditional Elements */
 
 /* START Compatiblity Elements */
-
 /* END Compatiblity Elements */
-
-/* START Media Queries for Responsive Design */
-
-
 
 /* START Debug */
 
