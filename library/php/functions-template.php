@@ -77,10 +77,10 @@ function fnbx_head_meta_content_type() {
 * @echo string
 */
 function fnbx_head_meta_template() {
-	$data = get_theme_data( get_stylesheet_directory() . '/style.css' );
+	$theme = wp_get_theme();
 	fnbx_write_meta_tag( array( 
 		'name' => 'template',
-		'content' => $data['Title'] . ' ' . $data['Version']
+		'content' => $theme->Name . ' ' . $theme->version
 	) );
 }
 
@@ -243,8 +243,8 @@ function fnbx_head_link_favicon() {
 */
 function fnbx_stylesheet_init() {
     if ( !is_admin() ) {
-		$theme  = get_theme( get_current_theme() );
-		wp_register_style( 'fnbx-style', get_stylesheet_uri(), false, $theme['Version'] );
+		$theme  = wp_get_theme();
+		wp_register_style( 'fnbx-style', get_stylesheet_uri(), false, $theme->version );
 		wp_enqueue_style( 'fnbx-style' );
     }
  }
