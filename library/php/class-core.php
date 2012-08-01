@@ -61,6 +61,8 @@ if ( !class_exists( 'fnbx' ) ) {
 					'header_image' => '',
 					'header_image_width' => 760,
 					'header_image_height' => 100,
+					'header_image_flex_width' => false,
+					'header_image_flex_height' => false,
 					'css_name' => '.header-',
 					'css_bg_color' => 'transparent',
 					'css_repeat' => 'no-repeat',
@@ -68,9 +70,11 @@ if ( !class_exists( 'fnbx' ) ) {
 					'css_position_x' => 'center',
 					'css_position_y' => 'top',
 					'css_position_from_theme' => false, // Force position from Theme style.css
-					'css_attachment' => ''
+					'css_attachment' => '',
+					'random_default' => false
 				);
 				$this->custom_header = apply_filters( 'fnbx_custom_header',  $this->custom_header );
+				
 			}
 
 			// Custom Backgrounds

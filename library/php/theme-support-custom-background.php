@@ -19,32 +19,26 @@
 */
 function fnbx_custom_background_setup() {
 	global $fnbx;
-			
-	add_custom_background('fnbx_custom_background');
+
+	$bg_args = array( 
+		'default-image' => $fnbx->custom_background['background_image'],
+		'default-color' => $fnbx->custom_background['css_bg_color'],
+		'wp-head-callback' => 'fnbx_custom_background'
+	);
+	
+	add_theme_support( 'custom-background', $bg_args );	
 }
 add_action( 'fnbx_loaded', 'fnbx_custom_background_setup' );
 
 function fnbx_custom_background() {
 	global $fnbx;
 
-	$fnbx->custom_background = array(
-		'background_image' => get_background_image(),
-		'css_name' => 'body',
-		'css_bg_color' => get_background_color(),
-		'css_repeat' => 'no-repeat',
-		'css_position_x' => 'center',
-		'css_position_y' => 'top',
-		'css_attachment' => ''
-	);
-	
-    if ( ! $fnbx->custom_background['background_image'] && ! $fnbx->custom_background['css_bg_color'] )
-        return;	
+	$fnbx->custom_background['background_image'] = get_background_image();
+	$fnbx->custom_background['css_bg_color'] = get_background_image();
 
-    $background = get_background_image();
-    $color = get_background_color();
-    
-    $page_element = 'body';
-    
+    $background = $fnbx->custom_background['background_image'];
+    $color = $fnbx->custom_background['css_bg_color'];
+        
     if ( ! $background && ! $color )
         return;
  
@@ -76,7 +70,7 @@ function fnbx_custom_background() {
    if ( empty( $css_txt ) ) return;
 ?>
 <style type="text/css">
-<?php echo $page_element; ?> { <?php echo trim( $css_txt ); ?> }
+<?php echo $fnbx->custom_background['css_name']; ?> { <?php echo trim( $css_txt ); ?> }
 </style>
 <?php
 }

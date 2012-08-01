@@ -19,15 +19,22 @@
 */
 function fnbx_custom_header_setup() {
 	global $fnbx;
-		
-	// Define Custom Header Images
-	define( 'NO_HEADER_TEXT', $fnbx->custom_header['no_header_text'] );
-	define( 'HEADER_TEXTCOLOR', $fnbx->custom_header['header_textcolor'] );
-	define( 'HEADER_IMAGE', $fnbx->custom_header['header_image'] );
-	define( 'HEADER_IMAGE_WIDTH', $fnbx->custom_header['header_image_width'] ); // use width and height appropriate for your theme
-	define( 'HEADER_IMAGE_HEIGHT', $fnbx->custom_header['header_image_height'] );
 	
-	add_custom_image_header('fnbx_custom_header_style', 'fnbx_custom_header_admin_style');
+	$header_args = array(
+		'default-image' => $fnbx->custom_header['header_image'],
+		'height' => $fnbx->custom_header['header_image_height'],
+		'width' => $fnbx->custom_header['header_image_width'],
+		'flex-height' => $fnbx->custom_header['header_image_flex_width'],
+		'flex-width' => $fnbx->custom_header['header_image_flex_height'],
+		'default-text-color' => $fnbx->custom_header['header_textcolor'],
+		'header-text' => $fnbx->custom_header['no_header_text'],
+		'random-default' => $fnbx->custom_header['random_default'],
+		'wp-head-callback' => 'fnbx_custom_header_style',
+		'admin-head-callback' => 'fnbx_custom_header_admin_style',
+	);
+	 
+	add_theme_support( 'custom-header', $header_args );	
+	
 }
 add_action( 'fnbx_loaded', 'fnbx_custom_header_setup' );
 
@@ -42,6 +49,12 @@ function fnbx_custom_header_style() {
    
    $css_image = get_header_image();
    if ( empty( $css_image ) ) $css_image = $fnbx->custom_header['header_image'];
+   
+   $h_height = get_custom_header()->height;
+   $h_width = get_custom_header()->width;
+   
+   if ( !empty( $h_height ) ) $css_txt .= "\n height: " . $h_height . 'px;';
+   if ( !empty( $h_width ) ) $css_txt .= "\n width: " . $h_width . 'px;';
    
    if ( !empty( $fnbx->custom_header['css_bg_color'] ) ) $css_txt .= "\n background-color: " . $fnbx->custom_header['css_bg_color'] . ';';
    
@@ -83,8 +96,8 @@ function fnbx_custom_header_admin_style() {
 	 
 	 ?><style type="text/css">
 		#headimg {
-			width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
-			height: <?php echo HEADER_IMAGE_HEIGHT; ?>px;
+			width: <?php echo get_custom_header()->width; ?>px;
+			height: <?php echo get_custom_header()->height; ?>px;
 			background-repeat: <?php echo $css_background_repeat; ?>;
 		}
 	</style>
