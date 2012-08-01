@@ -279,7 +279,6 @@ img.size-full {
 /* START Post styles */
 
 .post {
-    padding-top: .2em;
 }
 
 .entry-title {
@@ -319,19 +318,6 @@ img.size-full {
 	color: #222;
 	background: #efefef;
 	text-align: center;
-}
-
-.entry-date {
-	color: #666;
-}
-
-.entry-date abbr.published {
-	display: block;
-	cursor: default;
-	margin: .2em 0 .2em .2em;
-	padding: .2em;
-	color: #AFAFAF;
-	font-weight: normal;
 }
 
 .link-pages {

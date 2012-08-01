@@ -36,9 +36,15 @@ with WordPress.  If not, see <http://www.gnu.org/licenses/>.
 
 /* Layouts */
 
-$total-columns: 19; 
-$column-width: 2.626em;
-$gutter-width: .62em;
+/* 
+Column Notes
+.5 width = 1.313
+.25 width = .6565
+*/
+
+$total-columns: 26; 
+$column-width: 1.423em;
+$gutter-width: .88em;
 $grid-padding: 0;
 $show-grid-backgrounds: $show_grids;
 
@@ -46,6 +52,8 @@ $show-grid-backgrounds: $show_grids;
 Make Static or Magic
 */
 $container-style: static;
+
+/* Layout */
 
 .wrapper- {
 	@include container;
@@ -67,28 +75,31 @@ $container-style: static;
 }
 
 .container- {
-	@include span-columns(14);
-	font-size: 96%;
+	@include span-columns(20, 26);
 }
 	
 .content- {
-	@include span-columns(13.1, 14);
+	@include span-columns(19, 20);
+    @include pre(.5, 19);
+	@include omega;	
+
+	font-size: 96%;
 }
 
 .widgets-primary- {
-	@include span-columns(4);
+	@include span-columns(6, 26);
 	@include omega;	
 	font-size: 94%;
 }
 	
 .widgets-secondary- {
-	@include span-columns(4);
+	@include span-columns(6, 26);
 	@include omega;	
 	font-size: 94%;	
 	clear: right;		
 }
 
-@include at-breakpoint( 75em 22 ) {
+@include at-breakpoint( 75em 32 ) {
 
 	.wrapper- {
 		@include container;
@@ -104,31 +115,30 @@ $container-style: static;
 	}
 
 	.container- {
-		@include span-columns(15.9);
-		font-size: 96%;
-		/* Container border - right inner div: */
+		@include span-columns(24, 32);
 	}
 
 	.content- {
-		@include span-columns(14.8, 15.9);
+		@include span-columns(23, 24);
+		@include pre(1, 24);		
 	}
 
 	.widgets-primary- {
-		@include span-columns(5.1);
+		@include span-columns(8, 32);
 		@include omega;	
 		/* See container border  */
 	
 	}
 	
 	.widgets-secondary- {
-		@include span-columns(6);
+		@include span-columns(8, 32);
 		@include omega;
 		clear: right;		
 	}
 
 }
 
-@include at-breakpoint( 42em 13 62em ) {
+@include at-breakpoint( 42em 18 62em ) {
 	.wrapper- {
 		@include container;
 		@include susy-grid-background;
@@ -145,24 +155,31 @@ $container-style: static;
 	}
 	
 	.container- {
-		@include span-columns(13);
+		@include span-columns(18, 18);
 	}
 	
 	.content- {
-		@include span-columns(12.1, 13);
+		@include span-columns(18, 18);
+		@include pre(0, 18);
+		
+		font-size: 94%;
 	}
 	
 	.widgets-primary- {
-		@include span-columns(4);		
+		@include span-columns(18, 18);
+		
+		font-size: 92%;				
 	}
 	
 	.widgets-secondary- {
-		@include span-columns(4);		
+		@include span-columns(18, 18);
+		
+		font-size: 92%;				
 		clear: right;		
 	}
 }
 
-@include at-breakpoint( 28em 8 42em ) {
+@include at-breakpoint( 28em 12 42em ) {
 	.wrapper- {
 		@include container;
 		@include susy-grid-background;
@@ -179,24 +196,32 @@ $container-style: static;
 	}
 	
 	.container- {
-		@include span-columns(8);
+		@include span-columns(12, 12);
 	}
 	
 	.content- {
-		@include span-columns(8);
+		@include span-columns(12, 12);
+		@include pre(0, 12);
+		
+		font-size: 90%;	
 	}
 	
 	.widgets-primary- {
-		@include span-columns(8);
+		@include span-columns(12, 12);
+		
+		font-size: 86%;	
 	}
 	
 	.widgets-secondary- {
-		@include span-columns(8);
+		@include span-columns(12, 12);
+		@include omega;	
+
+		font-size: 86%;	
 		clear: right;		
 	}
 }
 
-@include at-breakpoint( 0em 6 28em ) {
+@include at-breakpoint( 0em 8 28em ) {
 	.wrapper- {
 		@include container;
 		@include susy-grid-background;
@@ -210,19 +235,27 @@ $container-style: static;
 	}
 	
 	.container- {
-		@include span-columns(6);
+		@include span-columns(8, 8);
 	}
 	
 	.content- {
-		@include span-columns(6);
+		@include span-columns(8, 8);
+		@include pre(0, 8);
+		
+		font-size: 90%;	
 	}
 	
 	.widgets-primary- {
-		@include span-columns(6);
+		@include span-columns(8, 8);
+		
+		font-size: 86%;	
 	}
 	
 	.widgets-secondary- {
-		@include span-columns(6);
+		@include span-columns(8, 8);
+		@include omega;	
+
+		font-size: 86%;	
 		clear: right;		
 	}
 }
