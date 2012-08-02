@@ -50,8 +50,8 @@ function fnbx_custom_header_style() {
    $css_image = get_header_image();
    if ( empty( $css_image ) ) $css_image = $fnbx->custom_header['header_image'];
    
-   $h_height = get_custom_header()->height;
-   $h_width = get_custom_header()->width;
+   $h_height = apply_filters( 'fnbx_custom_header_css_background_height',  get_custom_header()->height );
+   $h_width = apply_filters( 'fnbx_custom_header_css_background_width',  get_custom_header()->width );
    
    if ( !empty( $h_height ) ) $css_txt .= "\n height: " . $h_height . 'px;';
    if ( !empty( $h_width ) ) $css_txt .= "\n width: " . $h_width . 'px;';
