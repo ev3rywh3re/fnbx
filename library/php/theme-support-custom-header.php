@@ -19,7 +19,7 @@
 */
 function fnbx_custom_header_setup() {
 	global $fnbx;
-	
+
 	$header_args = array(
 		'default-image' => $fnbx->custom_header['header_image'],
 		'height' => $fnbx->custom_header['header_image_height'],
@@ -37,6 +37,32 @@ function fnbx_custom_header_setup() {
 	
 }
 add_action( 'fnbx_loaded', 'fnbx_custom_header_setup' );
+
+
+/**
+* Setup Custom Header Defaults
+*
+* If we have custom defaults for the theme set them first. Child themes should remember to add
+* additional headers. The default will be registered as part of this function.
+*
+* @since 1.0
+* @echo string
+*/
+function fnbx_custom_header_setup_defaults() {
+	global $fnbx;
+
+	if ( !empty( $fnbx->custom_header['header_image'] ) ) {
+		register_default_headers( array (
+			'fnbx_default_header' => array (
+				'url' => $fnbx->custom_header['header_image'],
+				'thumbnail_url' => $fnbx->custom_header['header_image_thumbnail'],
+				'description' => __( 'Default Header', 'fnbx_lang' )
+			)
+		) );
+	}
+}
+add_action( 'after_setup_theme', 'fnbx_custom_header_setup_defaults' );
+
 
 
 // gets included in the site header

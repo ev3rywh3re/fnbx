@@ -59,6 +59,7 @@ if ( !class_exists( 'fnbx' ) ) {
 					'no_header_text' => false,
 					'header_textcolor' => '',
 					'header_image' => '',
+					'header_image_thumbnail' => '',
 					'header_image_width' => 760,
 					'header_image_height' => 100,
 					'header_image_flex_width' => false,
