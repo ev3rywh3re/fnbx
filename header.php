@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 /**
 * Header Template
