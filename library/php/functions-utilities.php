@@ -55,6 +55,8 @@ function fnbx_date_classes( $t, $p = '' ) {
 if ( !function_exists( 'fnbx_html_tag' ) ) {
 	function fnbx_html_tag( $html = array() ) {
 	
+		if ( empty( $html ) ) return;
+		
 		$attributes = '';
 		$composite = '';
 		$spacer = '';
