@@ -71,7 +71,10 @@ function fnbx_defaut_init_actions() {
 	
 	// Entry title
 	add_action( 'fnbx_template_loop_entry_title', 'fnbx_entry_title' );
-		
+	
+	// Entry date
+	if ( !is_page() ) add_action( 'fnbx_template_loop_entry_title', 'fnbx_entry_date' );
+
 	// For all archives we put a page title, for author and categories we put desicription meta if available
 	if ( is_archive() ) {
 		// Loop template page title and description for some

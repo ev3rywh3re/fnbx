@@ -37,8 +37,6 @@ Need to study the behavor of
 	<?php do_action( "fnbx_template_loop_{$fnbx->template_part_name}_post_start", fnbx_get_the_id() ) ?>
 
 		<?php do_action( 'fnbx_template_loop_entry_title', fnbx_get_the_id() ) ?>
-
-		<?php if( !is_page() ) fnbx_entry_date(); // Only display date for non-pages ?>
 	
 		<?php if ( is_archive() || is_search() ) : // Only display Excerpts for archives & search ?>
 			
