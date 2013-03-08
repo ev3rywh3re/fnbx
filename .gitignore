@@ -1,0 +1,8 @@
+# Ingore stuff for this project
+
+# SaSS Cache
+.sass-cache/
+
+# SWP Files
+*.swp
+
