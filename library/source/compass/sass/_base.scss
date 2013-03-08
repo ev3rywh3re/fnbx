@@ -3,6 +3,111 @@
 @import "susy";
 @import "normalize";
 
+/* IE9 - Gradient support */
+$experimental-support-for-svg: true;
+
 /* Settings */
 
 $show_grids: true;
+
+/* Variables */
+
+$body-width: 100%;
+$body-font-size: 100%;
+
+/* Colors */
+
+$body-color: #000;
+
+$link-color: blue;
+$link-color-hover: red;
+$link-color-visited: #ccc;
+$link-color-active: #ddd;
+
+$color-white: #fff;
+$color-black: #000;
+
+$color-grey-light-1: #efefef;
+$color-grey-light-2: #eaeaea;
+$color-grey-light-3: #e2e2e2;
+
+$color-grey-dark-1: #7f7f7f;
+$color-grey-dark-2: #6d6d6d;
+$color-grey-dark-3: #666666;
+
+$color-green: #aab200;
+$color-blue: #003d73;
+$color-red: #cc3333;
+
+/* Colors - Basic */
+$colors-basic: ( 
+	'white',
+	'black',
+	'green',
+	'blue',
+	'red'
+);
+$colors-basic-values: ( 
+	$color-white, 
+	$color-black,
+	$color-green, 
+	$color-blue, 
+	$color-red
+);
+/* Color Util */
+@function colorsBasic($search) {
+	$n1: index($colors-basic, $search);
+	$n2: index($colors-basic-values, $search);
+	@if($n1) {
+	  @return nth($colors-basic-values, $n1);
+	} @else {
+	  @return nth($colors-basic, $n2);
+	}
+}
+
+/* Colors - Greys */
+$colors-grey: ( 
+	'grey-light-1',
+	'grey-light-2',
+	'grey-light-3',
+	'grey-dark-1',
+	'grey-dark-2',
+	'grey-dark-3'
+);
+$colors-grey-values: ( 
+	$color-grey-light-1,
+	$color-grey-light-2,
+	$color-grey-light-3,
+	$color-grey-dark-1,
+	$color-grey-dark-2,
+	$color-grey-dark-3 
+);
+
+/* Color Util */
+@function colorsGrey($search) {
+	$n1: index($colors-grey, $search);
+	$n2: index($colors-grey-values, $search);
+	@if($n1) {
+	  @return nth($colors-grey-values, $n1);
+	} @else {
+	  @return nth($colors-grey, $n2);
+	}
+}
+
+
+/* color classes */
+@mixin color-classes() {
+	@each $color in $colors-basic {
+	  .color-#{$color} { background-color: colorsBasic($color); color: colorsBasic('white'); }
+	}
+}
+
+/* Border Color Utility */
+@mixin border-colors() {		
+	@each $color in $colors-basic {
+	  .border-color-#{$color} { border-color: colorsBasic($color); }
+	}
+	@each $grey-color in $colors-grey {
+	  .border-color-#{$grey-color} { border-color: colorsGrey($grey-color); }
+	}		
+}

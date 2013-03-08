@@ -10,7 +10,7 @@ LICENSE URI: http://www.gnu.org/licenses/gpl-2.0.html
 TAGS:
 */
 
-/* 
+/*! 
 Copyright (c) Jess Planck (http://funroe.net)
 
 The FNBX Theme is released under the GNU General Public License.
@@ -31,6 +31,7 @@ with WordPress.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 /* Imports --------------------------------------------------------------*/
+
 @import "base";
 @import 'defaults';
 
@@ -53,18 +54,43 @@ Make Static or Magic
 */
 $container-style: static;
 
+body {
+	background-repeat: repeat-x;
+	background-position: top left; 
+}
+
 /* Layout */
 
 .wrapper- {
 	@include container;
 	@include susy-grid-background;
 }
+
+.container- {
+	@include span-columns(19 omega, 26);
+	/* Container border - right inner div: */
+	margin-left: -gutter(19)/2;
+	padding-left: gutter(19)/2;
 	
-.header-wrapper- {
-	width: 100%;
+	font-size: 96%;
 }
+
+.widgets-primary- {
+	@include span-columns(7 omega, 26);
 	
-/* Layout */
+	font-size: 94%;
+	float: left;
+}
+
+.widgets-secondary- {
+	@include span-columns(7 omega, 26);
+	
+	font-size: 94%;
+	float: left;
+	clear: right;		
+}
+
+/* Header */
 
 .header- {
 	@include container;
@@ -74,39 +100,49 @@ $container-style: static;
 	height: 15em;
 }
 
-.container- {
-	@include span-columns(20, 26);
-}
-	
-.content- {
-	@include span-columns(19, 20);
-    @include pre(.5, 19);
-	@include omega;	
+/* Footer */
 
-	font-size: 96%;
+.footer- {
+	@include container;
+	@include susy-grid-background;
+
+	margin-top: 1em;
+	clear: both;
 }
 
-.widgets-primary- {
-	@include span-columns(6, 26);
-	@include omega;	
-	font-size: 94%;
-}
-	
-.widgets-secondary- {
-	@include span-columns(6, 26);
-	@include omega;	
-	font-size: 94%;	
-	clear: right;		
-}
-
-@include at-breakpoint( 75em 32 ) {
+/* Layout - Large Screen breakpoint is 1166 */
+@include at-breakpoint( 74em 32 ) {
 
 	.wrapper- {
 		@include container;
-		@include susy-grid-background;
+		@include susy-grid-background;	
 	}
-
-/* Layout */
+	
+	.container- {
+		@include span-columns(23 omega, 32);
+		/* Container border - right inner div: */
+		margin-left: -gutter(23)/2;
+		padding-left: gutter(23)/2;
+		
+		font-size: 96%;
+	}
+	
+	.widgets-primary- {
+		@include span-columns(9 omega, 32);
+	
+		font-size: 94%;
+		float: left;
+		
+	}
+	
+	.widgets-secondary- {
+		@include span-columns(9 omega, 32);
+	
+		font-size: 94%;
+		float: left;
+	}
+		
+	/* Header */
 
 	.header- {
 		@include container;
@@ -114,37 +150,60 @@ $container-style: static;
 		height: 15em;
 	}
 
-	.container- {
-		@include span-columns(24, 32);
-	}
+	/* Footer */
 
-	.content- {
-		@include span-columns(23, 24);
-		@include pre(1, 24);		
-	}
-
-	.widgets-primary- {
-		@include span-columns(8, 32);
-		@include omega;	
-		/* See container border  */
+	.footer- {
+		@include container;
+		@include susy-grid-background;
 	
+		margin-top: 1em;
+		border-top: 1px solid #666;
+		clear: both;
+		
 	}
 	
-	.widgets-secondary- {
-		@include span-columns(8, 32);
-		@include omega;
-		clear: right;		
-	}
-
 }
 
+/* Layout - Tablet Screen breakpoint is  */
 @include at-breakpoint( 42em 18 62em ) {
+
 	.wrapper- {
 		@include container;
 		@include susy-grid-background;
 	}
 		
 	/* Layout */
+	
+	.container- {
+		@include span-columns(18, 18);
+		padding: gutter(18)/2;
+		margin: 0;
+		
+		font-size: 96%;
+	}
+	
+	.widgets-primary-active .container- {
+		border: none;
+	}
+	
+	.widgets-primary- {
+		@include span-columns(6, 18);
+		
+		padding: 0 1.2em 0 0;
+		
+		font-size: 94%;
+	}
+	
+	.widgets-secondary- {
+		@include span-columns(6, 18);
+		
+		padding: 0 1.2em 0 0;
+		
+		font-size: 94%;	
+		clear: right;		
+	}	
+		
+	/* Header */
 	
 	.header- {
 		@include container;
@@ -153,39 +212,54 @@ $container-style: static;
 		background-position: 10em left; 
 		height: 15em;
 	}
+
+	/* Footer */
+
+	.footer- {
+		@include container;
+		@include susy-grid-background;
 	
-	.container- {
-		@include span-columns(18, 18);
-	}
-	
-	.content- {
-		@include span-columns(18, 18);
-		@include pre(0, 18);
+		margin-top: 1em;
+		border-top: 1px solid #666;
+		clear: both;
+	}	
 		
-		font-size: 94%;
-	}
-	
-	.widgets-primary- {
-		@include span-columns(18, 18);
-		
-		font-size: 92%;				
-	}
-	
-	.widgets-secondary- {
-		@include span-columns(18, 18);
-		
-		font-size: 92%;				
-		clear: right;		
-	}
 }
 
+/* Layout - Phone Screen Landscape breakpoint is  */
 @include at-breakpoint( 28em 12 42em ) {
 	.wrapper- {
 		@include container;
 		@include susy-grid-background;
 	}
-		
+				
 	/* Layout */
+	
+	.container- {
+		@include span-columns(12, 12);
+		padding: gutter(12)/2;
+
+		font-size: 82%;
+	}
+	
+	.widgets-primary-active .container- {
+		border: none;
+	}	
+	
+	.widgets-primary- {
+		@include span-columns(12 omega, 12);
+				
+		font-size: 94%;
+	}
+	
+	.widgets-secondary- {
+		@include span-columns(12 omega, 12);
+				
+		font-size: 94%;	
+		clear: right;		
+	}
+	
+	/* Header */
 	
 	.header- {
 		@include container;
@@ -194,33 +268,22 @@ $container-style: static;
 		background-position: 10em left; 
 		height: 15em;
 	}
-	
-	.container- {
-		@include span-columns(12, 12);
-	}
-	
-	.content- {
-		@include span-columns(12, 12);
-		@include pre(0, 12);
-		
-		font-size: 90%;	
-	}
-	
-	.widgets-primary- {
-		@include span-columns(12, 12);
-		
-		font-size: 86%;	
-	}
-	
-	.widgets-secondary- {
-		@include span-columns(12, 12);
-		@include omega;	
 
-		font-size: 86%;	
-		clear: right;		
-	}
+	/* Footer */
+
+	.footer- {
+		@include container;
+		@include susy-grid-background;
+	
+		margin-top: 1em;
+		border-top: 1px solid #666;
+		clear: both;
+
+	}	
+		
 }
 
+/* Layout - Phone Screen Portrait breakpoint is  */
 @include at-breakpoint( 0em 8 28em ) {
 	.wrapper- {
 		@include container;
@@ -229,35 +292,50 @@ $container-style: static;
 		
 	/* Layout */
 	
+	.container- {
+		@include span-columns(8, 8);
+		padding: gutter(8)/2;
+
+		border: none;
+		font-size: 82%;
+	}
+	
+	.widgets-primary-active .container- {
+		border: none;
+	}
+	
+	.widgets-primary- {
+		@include span-columns(8, 8);
+				
+		font-size: 90%;
+	}
+	
+	.widgets-secondary- {
+		@include span-columns(8, 8);
+				
+		font-size: 90%;	
+		clear: right;		
+	}
+			
+	/* Header */
+	
 	.header- {
 		@include container;
 		@include susy-grid-background;	
 	}
 	
-	.container- {
-		@include span-columns(8, 8);
-	}
-	
-	.content- {
-		@include span-columns(8, 8);
-		@include pre(0, 8);
-		
-		font-size: 90%;	
-	}
-	
-	.widgets-primary- {
-		@include span-columns(8, 8);
-		
-		font-size: 86%;	
-	}
-	
-	.widgets-secondary- {
-		@include span-columns(8, 8);
-		@include omega;	
+	/* Nicholls Footer */
 
-		font-size: 86%;	
-		clear: right;		
+	.footer- {
+		@include container;
+		@include susy-grid-background;
+	
+		margin-top: 1em;
+		border-top: 1px solid #666;
+		clear: both;
+		
 	}
+	
 }
 
 /* Media Queries */
@@ -290,4 +368,102 @@ $container-style: static;
 /* 2x */
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
 /*  @import 'media/high-rez'; */
+}
+
+/* Print */
+@media print {
+	
+	/* START Layout */
+	
+	body {
+		background: #fff;
+		color: #000;
+		width: 100%;
+	}
+	
+	a:link,
+	a,
+	a:active,
+	a:visited {
+		background: transparent;
+		color: #000;
+	}
+	
+	.wrapper-,
+	.container- {
+		width: 100%; 	
+		text-align: left;
+		border: none;
+		background: transparent;
+		margin: 0;
+		padding: 0;
+	}	
+	
+	.wrapper- {
+		margin: 1em auto 0 auto;
+	}
+	
+	body.widgets-primary-active .container-, body.widgets-secondary-active .container-, .container-, .content- {
+		width: 100%; 
+		margin: 0;
+		padding: 0;	
+		text-align: left;
+		border: none;
+		background: transparent;
+		float: none;
+	}
+	
+	/* END Layout */
+	
+	.widgets- {
+		clear: both !important;
+		float: none !important;
+		width: 100% !important;
+	}	
+	
+	.widgets- .widget {
+		clear: both;
+		display: none;
+		float: none;
+		width: 100%;
+	}
+
+	/* START Header */
+
+	.header- {
+
+	}	
+	
+	.header- {
+		margin: 0 !important;
+		background: transparent;
+		width: 100% !important;
+		clear: both;
+		float: none;
+	}	
+	
+	/* END Header */
+	
+	/* START Navigation */
+	
+	.navigation- {
+		display: none;
+	}
+	
+	/* End Navigation */
+	
+	/* START Footer */
+	
+	.footer- {
+		width: 100%;
+	}
+
+	/* END Footer */
+
+}
+
+/* Compatibility - IE and other compatibility issues */
+
+/* Example */
+.lt-ie8 .custom {
 }
