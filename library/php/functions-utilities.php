@@ -855,7 +855,7 @@ function fnbx_layout_element_open( $element = '' , $return = false ) {
 
 	$layout_element_defaults['class'] = implode( ' ', $element_classes );
 
-	$layout_element_defaults = apply_filters( 'fnbx_' . $element . '_open_options',  $layout_element_defaults, $element );	
+	$layout_element_defaults = apply_filters( 'fnbx_' . $element . '_options_open',  $layout_element_defaults, $element );	
 
 	fnbx_html_tag( $layout_element_defaults );
 }
@@ -884,7 +884,7 @@ function fnbx_layout_element_open_class_only( $element = '' ) {
 
 	$layout_element_defaults['class'] = implode( ' ', $element_classes );
 
-	$layout_element_defaults = apply_filters( 'fnbx_' . $element . '_open_options',  $layout_element_defaults, $element );	
+	$layout_element_defaults = apply_filters( 'fnbx_' . $element . '_options_open',  $layout_element_defaults, $element );	
 
 	fnbx_html_tag( $layout_element_defaults );
 }
@@ -901,7 +901,7 @@ function fnbx_layout_element_close( $element = '' ) {
 	);
 
 	if ( $element != '' ) 
-		$layout_element_defaults = apply_filters( 'fnbx_' . $element . '_close_options',  $layout_element_defaults, $element );	
+		$layout_element_defaults = apply_filters( 'fnbx_' . $element . '_options_close',  $layout_element_defaults, $element );	
 
 	fnbx_html_tag( $layout_element_defaults );
 }
