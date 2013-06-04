@@ -37,8 +37,10 @@ function fnbx_defaut_init_actions() {
 	add_action( 'fnbx_wp_head_before', 'fnbx_head_link_breadcrumb' );
 
 	// Layout - Main
+	// wrapper - not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->';
 	add_action( 'fnbx_wrapper_start', 'fnbx_layout_element_open' );
-	add_action( 'fnbx_wrapper_end', 'fnbx_layout_element_close' );	
+	add_action( 'fnbx_wrapper_end', 'fnbx_layout_element_close' );
+	
 	add_action( 'fnbx_header_start', 'fnbx_layout_element_open' );
 	add_action( 'fnbx_header_end', 'fnbx_layout_element_close' );
 	add_action( 'fnbx_container_start', 'fnbx_layout_element_open' );

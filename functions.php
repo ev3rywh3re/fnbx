@@ -41,7 +41,7 @@ require_once( FNBX_LIBRARY . '/php/functions-utilities.php' );
 // Load FNBX Theme template functions
 require_once( FNBX_LIBRARY . '/php/functions-template.php' );
 
-// Load FNBX Theme support for post thumbnails
+// Load FNBX Theme support for post thumbnails also disabled on older WordPress versions.
 if ( function_exists( 'add_theme_support' ) ) {
 	
 	// The check for add_theme_support() means you need filter support if feature is unsupported!
@@ -64,6 +64,10 @@ if ( function_exists( 'add_theme_support' ) ) {
 
 	// Custom background support added by additional function file
 	if( $fnbx->theme_support['custom-background'] ) require_once( FNBX_LIBRARY . '/php/theme-support-custom-background.php' );
+	
+	// Custom HTML5 support added by additional function file
+	if( $fnbx->theme_support['html5'] ) require_once( FNBX_LIBRARY . '/php/theme-support-html5.php' );
+	
 }
 			
 // Load FNBX Theme widget functions and widgets
