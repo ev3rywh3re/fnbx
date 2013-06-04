@@ -791,6 +791,26 @@ function fnbx_do_meta_shortcode( $input = '' ) {
 	if ( isset( $meta_content ) ) return $meta_content;
 }
 
+/**
+Get an HTML5 tag name using the fnbx element for educated guesses
+*/
+function fnbx_htmlfive_element_tag_get( $element ) {
+	
+	switch( $element ) {
+		// Header
+		case 'header':
+			$html_tag = 'header';
+			break;
+		case 'access':
+			$html_tag = 'nav';
+			break;
+		default:
+			$html_tag = 'div'; // Better than nothing
+			break;
+	}
+	return $html_tag;
+}
+
 // FNBX element Classes takes element and array and spits out a class= with some dynamic filtering.
 function fnbx_layout_post_open( $the_post = 0 ) {	
 
@@ -813,6 +833,7 @@ function fnbx_layout_post_open( $the_post = 0 ) {
 
 	fnbx_html_tag( $layout_element_defaults );
 }
+
 
 // FNBX element Classes takes element and array and spits out a class= with some dynamic filtering.
 function fnbx_layout_post_close() {	
@@ -846,6 +867,8 @@ function fnbx_layout_element_open( $element = '' , $return = false ) {
 		'tag_content_before' => "\n",		
 		'tag_content_after' => "\n"		
 	);
+	
+	$layout_element_defaults['tag'] = fnbx_htmlfive_element_tag_get( $element );
 
 	$element_classes[] = $element . '-';
 
@@ -875,6 +898,8 @@ function fnbx_layout_element_open_class_only( $element = '' ) {
 		'tag_content_after' => "\n",
 		'return' => false,
 	);
+	
+	$layout_element_defaults['tag'] = fnbx_htmlfive_element_tag_get( $element );	
 
 	$element_classes[] = $element;
 
@@ -899,6 +924,8 @@ function fnbx_layout_element_close( $element = '' ) {
 		'tag_content_after' => "\n",		
 		'return' => false
 	);
+	
+	$layout_element_defaults['tag'] = fnbx_htmlfive_element_tag_get( $element );
 
 	if ( $element != '' ) 
 		$layout_element_defaults = apply_filters( 'fnbx_' . $element . '_options_close',  $layout_element_defaults, $element );	
