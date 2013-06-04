@@ -332,9 +332,9 @@ Archives, Authors, etc.
 */
 function fnbx_access_menu() {
 
-	$access_element = array(
+	$access_element_open = array(
 		'tag_type' => 'open',
-		'tag' => 'div',
+		'tag' => 'nav',
 		'id' => 'access',
 		'tag_content_before' => "\n",
 		'tag_content_after' => "\n"		
@@ -346,9 +346,11 @@ function fnbx_access_menu() {
 		$access_element_classes_text = implode( ' ', $access_element_classes );
 
 	if ( !empty( $access_element_classes_text ) || isset( $access_element_classes_text ) || $access_element_classes_text != '' )
-		$access_element['class'] = $access_element_classes_text;		
+		$access_element_open['class'] = $access_element_classes_text;
+				
+	$access_element_open = apply_filters( 'fnbx_access_element_open_options',  $access_element_open, 'access' );	
 
-	fnbx_html_tag( $access_element );
+	fnbx_html_tag( $access_element_open );
 
 	fnbx_html_tag( array(
 		'tag_type' => 'open',
@@ -373,13 +375,17 @@ function fnbx_access_menu() {
 	) );
 
 	do_action( 'fnbx_access_menu_action');
-
-	fnbx_html_tag( array(
+	
+	$access_element_close = array(
 		'tag_type' => 'close',
-		'tag' => 'div',
+		'tag' => 'nav',
 		'tag_content_before' => "\n",
-		'tag_content_after' => "\n"		
-	) );
+		'tag_content_after' => "\n"	
+	);
+
+	$access_element_close = apply_filters( 'fnbx_access_element_close_options',  $access_element_close, 'access' );	
+
+	fnbx_html_tag( $access_element_close );
 }
 
 /**
