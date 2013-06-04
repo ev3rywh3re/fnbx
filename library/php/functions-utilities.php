@@ -797,7 +797,7 @@ function fnbx_layout_post_open( $the_post = 0 ) {
 	$element_classes = array();
 
 	$layout_element_defaults = array(
-		'tag' => 'div',
+		'tag' => 'article',
 		'tag_type' => 'open',
 		'return' => false,
 		'id' => 'post-' . $the_post,
@@ -809,7 +809,7 @@ function fnbx_layout_post_open( $the_post = 0 ) {
 
 	$layout_element_defaults['class'] = implode( ' ', $element_classes );
 
-	$layout_element_defaults = apply_filters( 'fnbx_post_attributes',  $layout_element_defaults );	
+	$layout_element_defaults = apply_filters( 'fnbx_post_open_options',  $layout_element_defaults );	
 
 	fnbx_html_tag( $layout_element_defaults );
 }
@@ -818,14 +818,14 @@ function fnbx_layout_post_open( $the_post = 0 ) {
 function fnbx_layout_post_close() {	
 
 	$layout_element_defaults = array(
-		'tag' => 'div',
+		'tag' => 'article',
 		'tag_type' => 'close',
 		'tag_content_before' => "\n",		
 		'tag_content_after' => "\n",		
 		'return' => false
 	);
 
-	$layout_element_defaults = apply_filters( 'fnbx_post_close_attributes',  $layout_element_defaults );	
+	$layout_element_defaults = apply_filters( 'fnbx_post_close_options',  $layout_element_defaults );	
 
 	fnbx_html_tag( $layout_element_defaults );
 }
