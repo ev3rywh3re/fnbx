@@ -72,7 +72,7 @@ function fnbx_defaut_init_actions() {
 	add_action( 'fnbx_footer', 'fnbx_footer_default' );
 	
 	// Entry Article Header - with dates and other meta
-	add_action( 'fnbx_template_loop_entry_title', 'fnbx_article_header' );
+	add_action( 'fnbx_template_loop_entry_title', 'fnbx_entry_header' );
 
 	// For all archives we put a page title, for author and categories we put desicription meta if available
 	if ( is_archive() ) {
@@ -86,7 +86,7 @@ function fnbx_defaut_init_actions() {
 	// Home example adding a post thumbnail
 	if ( is_home() ) add_action( 'fnbx_template_loop_content_start', 'fnbx_the_post_thumbnail' );
 
-	add_action( 'fnbx_template_loop_content_end', 'fnbx_article_footer' );	
+	add_action( 'fnbx_template_loop_content_end', 'fnbx_entry_footer' );	
 	
 	// Put an edit link for pages since we don't show meta
 	if ( is_page() ) add_action( 'fnbx_template_loop_content_end', 'fnbx_post_meta_edit' );		
