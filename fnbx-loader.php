@@ -71,11 +71,8 @@ function fnbx_defaut_init_actions() {
 	// Default Footer Content
 	add_action( 'fnbx_footer', 'fnbx_footer_default' );
 	
-	// Entry title
-	add_action( 'fnbx_template_loop_entry_title', 'fnbx_entry_title' );
-	
-	// Entry date
-	if ( !is_page() ) add_action( 'fnbx_template_loop_entry_title', 'fnbx_entry_date' );
+	// Entry Article Header - with dates and other meta
+	add_action( 'fnbx_template_loop_entry_title', 'fnbx_article_header' );
 
 	// For all archives we put a page title, for author and categories we put desicription meta if available
 	if ( is_archive() ) {

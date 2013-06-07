@@ -686,6 +686,49 @@ function fnbx_page_description_default() {
 }
 
 /**
+* FNBX Article Header
+*
+* Writes HTML5 HEADER for use in ARTICLE. 
+*
+* @since 1.0
+* @echo string
+*/
+function fnbx_article_header() {
+
+	fnbx_layout_element_open( 'article-header' );
+	fnbx_entry_title();
+	
+	// Entry date
+	if ( !is_page() ) fnbx_entry_date();
+	
+	fnbx_layout_element_close( 'article-header' );
+}
+
+/**
+* FNBX Article Footer
+*
+* Writes HTML5 FOOTER for use in ARTICLE. 
+*
+* @since 1.0
+* @echo string
+*/
+function fnbx_article_footer() {
+
+	fnbx_layout_element_open( 'article-footer' );
+
+	// Content meta do we want brief or verbose, we could also filter or change with language files.
+	if ( is_home() || ( is_archive() || is_search() ) ) 
+		fnbx_post_meta_brief();
+	// This should cover is_single, is_attachement, is_image
+	elseif ( !is_page() )
+		fnbx_post_meta_verbose();	
+		
+	
+	fnbx_layout_element_close( 'article-footer' );
+}
+
+
+/**
 * FNBX Entry Meta Box HTML
 *
 * Writes HTML post meta information. Uses fnbx_parse_meta_shortcode() function for dynamic meta

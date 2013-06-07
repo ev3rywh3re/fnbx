@@ -10,7 +10,7 @@
 
 function fnbx_filter_layout_elements( $attributes, $element ) {
 	
-	if ( $element == 'header' ) $attributes['tag'] = 'header';
+	if ( $element == 'header' ) $attributes['tag'] = 'div';
 	if ( $element == 'access' ) $attributes['tag'] = 'div';
 
 	return $attributes;

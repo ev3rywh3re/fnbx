@@ -801,6 +801,12 @@ function fnbx_htmlfive_element_tag_get( $element ) {
 		case 'header':
 			$html_tag = 'header';
 			break;
+		case 'article-header':
+			$html_tag = 'header';
+			break;
+		case 'article-footer':
+			$html_tag = 'footer';
+			break;			
 		case 'access':
 			$html_tag = 'nav';
 			break;
