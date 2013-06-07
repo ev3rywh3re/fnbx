@@ -693,20 +693,20 @@ function fnbx_page_description_default() {
 * @since 1.0
 * @echo string
 */
-function fnbx_article_header() {
+function fnbx_entry_header() {
 
-	do_action( 'fnbx_article_header_before', 'article-header' );
-	fnbx_layout_element_open( 'article-header' );
-	do_action( 'fnbx_article_header_open', 'article-header' );
+	do_action( 'fnbx_entry_header_before', 'entry-header' );
+	fnbx_layout_element_open( 'entry-header' );
+	do_action( 'fnbx_entry_header_open', 'entry-header' );
 
 	fnbx_entry_title();
 	
 	// Entry date
 	if ( !is_page() ) fnbx_entry_date();
 
-	do_action( 'fnbx_article_header_close', 'article-header' );
-	fnbx_layout_element_close( 'article-header' );
-	do_action( 'fnbx_article_header_after', 'article-header' );
+	do_action( 'fnbx_entry_header_close', 'entry-header' );
+	fnbx_layout_element_close( 'entry-header' );
+	do_action( 'fnbx_entry_header_after', 'entry-header' );
 
 }
 
@@ -718,11 +718,11 @@ function fnbx_article_header() {
 * @since 1.0
 * @echo string
 */
-function fnbx_article_footer() {
+function fnbx_entry_footer() {
 
-	do_action( 'fnbx_article_footer_before', 'article-footer' );
-	fnbx_layout_element_open( 'article-footer' );
-	do_action( 'fnbx_article_footer_open', 'article-footer' );
+	do_action( 'fnbx_entry_footer_before', 'entry-footer' );
+	fnbx_layout_element_open( 'entry-footer' );
+	do_action( 'fnbx_entry_footer_open', 'entry-footer' );
 
 	// Content meta do we want brief or verbose, we could also filter or change with language files.
 	if ( is_home() || ( is_archive() || is_search() ) ) 
@@ -731,9 +731,9 @@ function fnbx_article_footer() {
 	elseif ( !is_page() )
 		fnbx_post_meta_verbose();	
 		
-	do_action( 'fnbx_article_footer_close', 'article-footer' );
-	fnbx_layout_element_close( 'article-footer' );
-	do_action( 'fnbx_article_footer_after', 'article-footer' );
+	do_action( 'fnbx_entry_footer_close', 'entry-footer' );
+	fnbx_layout_element_close( 'entry-footer' );
+	do_action( 'fnbx_entry_footer_after', 'entry-footer' );
 	
 }
 

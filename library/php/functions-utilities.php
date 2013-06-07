@@ -801,10 +801,10 @@ function fnbx_htmlfive_element_tag_get( $element ) {
 		case 'header':
 			$html_tag = 'header';
 			break;
-		case 'article-header':
+		case 'entry-header':
 			$html_tag = 'header';
 			break;
-		case 'article-footer':
+		case 'entry-footer':
 			$html_tag = 'footer';
 			break;			
 		case 'access':
