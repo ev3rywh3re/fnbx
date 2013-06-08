@@ -1163,7 +1163,7 @@ div.wpcf7 {
 /* END - Custom Site */
 /* START Hidden Elements */
 /* line 873, library/source/compass/sass/_defaults.scss */
-.hide, .access- {
+.hide, .accessibility-hide .accessibility {
   position: absolute !important;
   top: -9999px !important;
   left: -9999px !important; }

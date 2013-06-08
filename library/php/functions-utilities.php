@@ -807,7 +807,7 @@ function fnbx_htmlfive_element_tag_get( $element ) {
 		case 'entry-footer':
 			$html_tag = 'footer';
 			break;			
-		case 'access':
+		case 'fnbx-menu':
 			$html_tag = 'nav';
 			break;
 		default:

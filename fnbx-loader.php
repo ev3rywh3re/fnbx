@@ -63,7 +63,7 @@ function fnbx_defaut_init_actions() {
 	add_action( 'fnbx_header', 'fnbx_default_description' );
 
 	// Accessiblity and Menu - Add access area to theme
-	add_action( 'fnbx_header_end', 'fnbx_access_menu' );
+	add_action( 'fnbx_header_end', 'fnbx_menu' );
 
 	// Widget Sidebar Group
 	add_action( 'fnbx_container_end', 'fnbx_default_widget_sidebar' );
@@ -160,7 +160,7 @@ add_action( 'fnbx_init', 'fnbx_defaut_init_actions' );
 
 // Default init for adding post thumbnail & nav menu support to functions.php
 add_action( 'fnbx_loaded', 'fnbx_post_thumbnails_default_setup' );
-add_action( 'fnbx_loaded', 'fnbx_nav_menus_default_setup' );
+add_action( 'fnbx_loaded', 'fnbx_menu_default_setup' );
 
 /**
 * FNBX Theme Centric Filters
@@ -170,6 +170,10 @@ add_action( 'fnbx_loaded', 'fnbx_nav_menus_default_setup' );
 * @since 1.0
 */
 function fnbx_default_init_filters() {
+	//Hide Accessiblity with body class
+	add_filter('fnbx_body_class', create_function('$c', '$c[] = "accessibility-hide"; return $c;'));
+	//add_filter('fnbx_body_class', create_function('$c, 1', 'return $c . "accessibility-hide";'));
+	
 	// Filter Header display tag
 	add_filter( 'fnbx_default_title', 'fnbx_header_title_filter' );
 
