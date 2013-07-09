@@ -1,11 +1,11 @@
 <?php 
 /**
-* FNBX Theme HTML5 Support
+* FNBX Theme HTML4 Support
 *
-* Actions, filters, and functions used by the FNBX Theme to create HTML5 things.
+* Actions, filters, and functions used by the FNBX Theme to create HTML4 things.
 *
 * @package FNBX Theme
-* @subpackage HTML5 Support
+* @subpackage HTML4 Support
 */
 
 function fnbx_filter_layout_elements( $attributes, $element ) {

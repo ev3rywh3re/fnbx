@@ -50,6 +50,7 @@ if ( !class_exists( 'fnbx' ) ) {
 				'custom-header' => true,
 				'custom-background' => true,
 				'editor-style' => true,
+				'htmlfour' => false
 			);
 			$this->theme_support = apply_filters( 'fnbx_theme_support', $this->theme_support );
 
