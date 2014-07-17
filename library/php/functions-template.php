@@ -436,8 +436,8 @@ function fnbx_default_description() {
 
 	$description_defaults = array(
 		'tag' => 'div',
-		'id' => 'blog-description',
-		'class' => 'blog-description-',
+		'id' => 'site-description',
+		'class' => 'site-description-',
 		'tag_content' => get_bloginfo( 'description' ),
 		'tag_content_before' => "\n",
 		'tag_content_after' => "\n"

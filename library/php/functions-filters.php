@@ -20,7 +20,7 @@
 function fnbx_body_class_filter( $classes ) {
 	global $wp_query, $current_user;
 
-	// It's surely a WordPress blog, right?
+	// It's surely WordPress, right?
 	$classes[] = 'wordpress';
 
 	// Applies the time- and date-based classes (below) to BODY element
