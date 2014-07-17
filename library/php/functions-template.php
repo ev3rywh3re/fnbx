@@ -411,8 +411,8 @@ function fnbx_default_title() {
 
 	$title_defaults = array(
 		'tag' => 'h1',
-		'id' => 'blog-title',
-		'class' => 'blog-title-',
+		'id' => 'site-title',
+		'class' => 'site-title-',
 		'tag_content' => $title_link,
 		'tag_content_before' => "\n",
 		'tag_content_after' => "\n"
