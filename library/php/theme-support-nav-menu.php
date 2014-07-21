@@ -19,13 +19,10 @@
 * @since 1.0
 * @echo string
 */
-function fnbx_menu_default_setup() {
-	add_theme_support('nav-menus');
-	
+function fnbx_nav_menus_default_setup() {
+	add_theme_support('nav-menus');	
 	// Register Top Menu
-	register_nav_menu( 'fnbx-menu', __( 'FNBX Menu' ) );
-	add_action( 'fnbx_menu_action', 'fnbx_menu_default_menu' );	
-
+	register_nav_menu( 'menu-top', __( 'Top Menu' ) );
 }
 
 
@@ -38,15 +35,15 @@ function fnbx_menu_default_setup() {
 * @since 1.0
 * @echo string
 */
-function fnbx_menu_default_menu() {
+function fnbx_nav_menus_default_menu() {
 
 	$menu_defaults = array( 
-		'menu' => 'FNBX Menu', 
-		'theme_location' => 'fnbx-menu',
-		'container' => 'nav',
-		'container_class' => 'fnbx-menu-container-',
-		'container_id' => 'fnbx-menu-container',
-		'menu_class' => 'fnbx-menu',
+		'menu' => 'Top Menu', 
+		'theme_location' => 'menu-top',
+		'container' => 'div',
+		'container_class' => 'menu-top-container-',
+		'container_id' => 'menu-top-container',
+		'menu_class' => 'menu-top',
 		'echo' => true,
 		'fallback_cb' => '', 
 		'before' => '',

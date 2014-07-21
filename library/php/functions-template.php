@@ -323,32 +323,25 @@ Archives, Authors, etc.
 }
 
 /**
-* Main Menu HTML with Accessiblity Options
+* Navigation Accessiblity Options
 *
 * Writes HTML for producing a main website menu structure for Pages
 *
 * @since 1.0
 * @echo string
 */
-function fnbx_menu() {
+function fnbx_nav_accessiblity() {
 
 	$menu_element_open = array(
 		'tag_type' => 'open',
 		'tag' => 'nav',
-		'id' => 'fnbx-menu',
+		'id' => 'fnbx-nav-accessibility',
+		'class' => 'fnbx-nav-accessibility- accessibility',
 		'tag_content_before' => "\n",
 		'tag_content_after' => "\n"		
 	);
-
-	$menu_element_classes = array( 'fnbx-menu-' );
-	$menu_element_classes = apply_filters( 'fnbx_menu_classes',  $menu_element_classes );
-	if ( is_array( $menu_element_classes ) && !empty( $menu_element_classes) )
-		$menu_element_classes_text = implode( ' ', $menu_element_classes );
-
-	if ( !empty( $menu_element_classes_text ) || isset( $menu_element_classes_text ) || $menu_element_classes_text != '' )
-		$menu_element_open['class'] = $menu_element_classes_text;
 				
-	$menu_element_open = apply_filters( 'fnbx_menu_element_open_options',  $menu_element_open, 'fnbx-menu' );	
+	$menu_element_open = apply_filters( 'fnbx_nav_accessiblity_open_options',  $menu_element_open, 'fnbx-nav' );	
 
 	fnbx_html_tag( $menu_element_open );
 
@@ -369,7 +362,7 @@ function fnbx_menu() {
 	) );
 
 	// Action for more accessibility stuff
-	do_action( 'fnbx_menu_accessibility_action');
+	do_action( 'fnbx_nav_accessibility_action');
 
 	fnbx_html_tag( array(
 		'tag_type' => 'close',
@@ -384,8 +377,6 @@ function fnbx_menu() {
 		'tag_content_before' => "\n",
 		'tag_content_after' => "\n"	
 	);
-
-	$menu_element_close = apply_filters( 'fnbx_menu_element_close_options',  $menu_element_close, 'fnbx-menu' );	
 
 	fnbx_html_tag( $menu_element_close );
 }

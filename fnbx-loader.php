@@ -63,7 +63,8 @@ function fnbx_defaut_init_actions() {
 	add_action( 'fnbx_header', 'fnbx_default_description' );
 
 	// Accessiblity and Menu - Add access area to theme
-	add_action( 'fnbx_header_end', 'fnbx_menu' );
+	add_action( 'fnbx_header_end', 'fnbx_nav_accessiblity' );		
+	add_action( 'fnbx_header_end', 'fnbx_nav_menus_default_menu' );		
 
 	// Widget Sidebar Group
 	add_action( 'fnbx_container_end', 'fnbx_default_widget_sidebar' );
