@@ -40,7 +40,7 @@ function fnbx_nav_menus_default_menu() {
 	$menu_defaults = array( 
 		'menu' => 'Top Menu', 
 		'theme_location' => 'menu-top',
-		'container' => 'div',
+		'container' => 'nav',
 		'container_class' => 'menu-top-container-',
 		'container_id' => 'menu-top-container',
 		'menu_class' => 'menu-top',
