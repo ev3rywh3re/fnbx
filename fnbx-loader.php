@@ -161,7 +161,7 @@ add_action( 'fnbx_init', 'fnbx_defaut_init_actions' );
 
 // Default init for adding post thumbnail & nav menu support to functions.php
 add_action( 'fnbx_loaded', 'fnbx_post_thumbnails_default_setup' );
-add_action( 'fnbx_loaded', 'fnbx_menu_default_setup' );
+add_action( 'fnbx_loaded', 'fnbx_nav_menus_default_setup' );
 
 /**
 * FNBX Theme Centric Filters
