@@ -2,18 +2,17 @@
 @import "compass";
 @import "susy";
 @import "normalize";
+@import "compass/css3/images";
 
-/* IE9 - Gradient support */
+/* IE9 - Gradient support IE9 SVG, needs conditional override of 'filter' to 'none' */
 $experimental-support-for-svg: true;
 
 /* Settings */
 
-$show_grids: true;
+$show_grids: false;
 
-/* Variables */
-
-$body-width: 100%;
-$body-font-size: 100%;
+$body-width: '100%';
+$body-font-size: '100%';
 
 /* Colors */
 

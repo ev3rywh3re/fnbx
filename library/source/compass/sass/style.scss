@@ -31,8 +31,8 @@ with WordPress.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 /* Imports --------------------------------------------------------------*/
-
-@import "base";
+@import 'base';
+@import 'breakpoint';
 @import 'defaults';
 
 /* Layouts */
@@ -43,16 +43,39 @@ Column Notes
 .25 width = .6565
 */
 
-$total-columns: 26; 
-$column-width: 1.423em;
-$gutter-width: .88em;
-$grid-padding: 0;
-$show-grid-backgrounds: $show_grids;
+/* Susy - Configuration */
 
+$susy: (
+	// the basics
+	columns: 26,
+	gutters: .74,
+	column-width: 1.2em,
+	// advanced
+	math: static,
+	debug: (
+		image: show,
+		color: blue,
+		output: overlay,
+		toggle: top left
+	)	
+);
+
+/* Susy - Configuration - Debug */
 /*
-Make Static or Magic
+// Use this in configuration to setup debugging
+$susy: (
+	debug: (
+		image: show,
+		color: blue,
+		output: overlay,
+		toggle: top left
+	)
+);
+// Use this in container areas to show grids
+@include show-grid(overlay);
 */
-$container-style: static;
+
+/* Layout - Default breakpoint is 945 */
 
 body {
 	background-repeat: repeat-x;
@@ -62,283 +85,108 @@ body {
 /* Layout */
 
 .wrapper- {
-	@include container;
-	@include susy-grid-background;
+	@include container(31);
+	@include show-grid(overlay);
 }
 
 .container- {
-	@include span-columns(19 omega, 26);
-	/* Container border - right inner div: */
-	margin-left: -gutter(19)/2;
-	padding-left: gutter(19)/2;
-	
-	font-size: 96%;
+	@include span(31);
 }
 
-.widgets-primary- {
-	@include span-columns(7 omega, 26);
-	
-	font-size: 94%;
-	float: left;
+.widgets-primary-active .container-, .widgets-secondary-active .container- {
+	@include span(21 of 31);
 }
 
-.widgets-secondary- {
-	@include span-columns(7 omega, 26);
-	
-	font-size: 94%;
-	float: left;
-	clear: right;		
+.widgets-primary-active .widgets-, .widgets-secondary-active .widgets- {
+	@include span(last 9 of 31);
 }
 
 /* Header */
 
 .header- {
-	@include container;
-	@include susy-grid-background;
-	background-repeat: no-repeat;
-	background-position: 10em left; 
-	height: 15em;
+	@include container(31);
+	padding: 0;
+	position: relative;
 }
 
 /* Footer */
 
 .footer- {
-	@include container;
-	@include susy-grid-background;
-
-	margin-top: 1em;
 	clear: both;
 }
 
 /* Layout - Large Screen breakpoint is 1166 */
-@include at-breakpoint( 74em 32 ) {
-
-	.wrapper- {
-		@include container;
-		@include susy-grid-background;	
-	}
-	
-	.container- {
-		@include span-columns(23 omega, 32);
-		/* Container border - right inner div: */
-		margin-left: -gutter(23)/2;
-		padding-left: gutter(23)/2;
-		
-		font-size: 96%;
-	}
-	
-	.widgets-primary- {
-		@include span-columns(9 omega, 32);
-	
-		font-size: 94%;
-		float: left;
-		
-	}
-	
-	.widgets-secondary- {
-		@include span-columns(9 omega, 32);
-	
-		font-size: 94%;
-		float: left;
-	}
-		
-	/* Header */
-
+@include susy-breakpoint( 80em, 37 ) {
 	.header- {
-		@include container;
-		@include susy-grid-background;
-		height: 15em;
-	}
-
-	/* Footer */
-
-	.footer- {
-		@include container;
-		@include susy-grid-background;
-	
-		margin-top: 1em;
-		border-top: 1px solid #666;
-		clear: both;
-		
+		@include container(37);
 	}
 	
+	.wrapper- {
+		@include container(37);
+		@include show-grid(overlay);
+	}
+
+	.container- {
+		@include span(37);
+	}
+
+	.widgets-primary-active .container-, .widgets-secondary-active .container- {
+		@include span(26 of 37);
+	}
+
+	.widgets-primary-active .widgets-, .widgets-secondary-active .widgets- {
+		@include span(last 10 of 37);
+	}
 }
 
 /* Layout - Tablet Screen breakpoint is  */
-@include at-breakpoint( 42em 18 62em ) {
-
-	.wrapper- {
-		@include container;
-		@include susy-grid-background;
-	}
-		
-	/* Layout */
-	
-	.container- {
-		@include span-columns(18, 18);
-		padding: gutter(18)/2;
-		margin: 0;
-		
-		font-size: 96%;
-	}
-	
-	.widgets-primary-active .container- {
-		border: none;
-	}
-	
-	.widgets-primary- {
-		@include span-columns(6, 18);
-		
-		padding: 0 1.2em 0 0;
-		
-		font-size: 94%;
-	}
-	
-	.widgets-secondary- {
-		@include span-columns(6, 18);
-		
-		padding: 0 1.2em 0 0;
-		
-		font-size: 94%;	
-		clear: right;		
-	}	
-		
-	/* Header */
-	
+@include susy-breakpoint( 46em 62em, 23) {
 	.header- {
-		@include container;
-		@include susy-grid-background;	
-		background-repeat: no-repeat;
-		background-position: 10em left; 
-		height: 15em;
+		@include container(23);
 	}
-
-	/* Footer */
-
-	.footer- {
-		@include container;
-		@include susy-grid-background;
 	
-		margin-top: 1em;
-		border-top: 1px solid #666;
-		clear: both;
+	.wrapper- {
+		@include container(23);
+		@include show-grid(overlay);
 	}	
-		
+
+	.container-, .widgets-primary-active .container-, .widgets-secondary-active .container- {
+		@include span(23);
+	}		
 }
 
 /* Layout - Phone Screen Landscape breakpoint is  */
-@include at-breakpoint( 28em 12 42em ) {
-	.wrapper- {
-		@include container;
-		@include susy-grid-background;
-	}
-				
-	/* Layout */
-	
-	.container- {
-		@include span-columns(12, 12);
-		padding: gutter(12)/2;
-
-		font-size: 82%;
-	}
-	
-	.widgets-primary-active .container- {
-		border: none;
-	}	
-	
-	.widgets-primary- {
-		@include span-columns(12 omega, 12);
-				
-		font-size: 94%;
-	}
-	
-	.widgets-secondary- {
-		@include span-columns(12 omega, 12);
-				
-		font-size: 94%;	
-		clear: right;		
-	}
-	
-	/* Header */
-	
+@include susy-breakpoint( 31em 46em, 17 ) {
 	.header- {
-		@include container;
-		@include susy-grid-background;	
-		background-repeat: no-repeat;
-		background-position: 10em left; 
-		height: 15em;
+		@include container(17);
 	}
-
-	/* Footer */
-
-	.footer- {
-		@include container;
-		@include susy-grid-background;
 	
-		margin-top: 1em;
-		border-top: 1px solid #666;
-		clear: both;
-
+	.wrapper- {
+		@include container(17);
+		@include show-grid(overlay);
 	}	
-		
+
+	.container-, .widgets-primary-active .container-, .widgets-secondary-active .container- {
+		@include span(17);
+	}	
 }
 
 /* Layout - Phone Screen Portrait breakpoint is  */
-@include at-breakpoint( 0em 8 28em ) {
-	.wrapper- {
-		@include container;
-		@include susy-grid-background;
-	}
-		
-	/* Layout */
-	
-	.container- {
-		@include span-columns(8, 8);
-		padding: gutter(8)/2;
-
-		border: none;
-		font-size: 82%;
-	}
-	
-	.widgets-primary-active .container- {
-		border: none;
-	}
-	
-	.widgets-primary- {
-		@include span-columns(8, 8);
-				
-		font-size: 90%;
-	}
-	
-	.widgets-secondary- {
-		@include span-columns(8, 8);
-				
-		font-size: 90%;	
-		clear: right;		
-	}
-			
-	/* Header */
-	
+@include susy-breakpoint( 0em 31em, 11 ) {
 	.header- {
-		@include container;
-		@include susy-grid-background;	
+		@include container(11);
 	}
 	
-	/* Nicholls Footer */
+	.wrapper- {
+		@include container(11);
+		@include show-grid(overlay);
+	}
 
-	.footer- {
-		@include container;
-		@include susy-grid-background;
-	
-		margin-top: 1em;
-		border-top: 1px solid #666;
-		clear: both;
-		
-	}
-	
+	.container-, .widgets-primary-active .container-, .widgets-secondary-active .container- {
+		@include span(11);
+	}		
 }
 
-/* Media Queries */
 
 /* 480px */
 @media only screen and (min-width: 1px) and (max-width: 480px), only screen and (max-device-width: 480px) {
