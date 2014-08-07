@@ -939,25 +939,6 @@ function fnbx_layout_element_close( $element = '' ) {
 	fnbx_html_tag( $layout_element_defaults );
 }
 
-function fnbx_get_nav_meta( $direction = '' ) {
-
-	$nav_meta_defaults = array(
-		'tag' => 'span',
-		'class' => 'nav-meta',
-		'tag_content' => '',
-		'tag_content_before' => ' ',
-		'tag_content_after' => ' ',	
-		'return' => true
-	);
-
-	$nav_meta_defaults['tag_content'] = ( $direction == 'next' ) ? __( '&raquo;', 'fnbx_lang' ) : __( '&laquo;', 'fnbx_lang' );
-
-	$nav_meta_defaults = apply_filters( 'fnbx_get_nav_meta',  $nav_meta_defaults );	
-
-	return fnbx_html_tag( $nav_meta_defaults );
-
-}
-
 // Stolen from WordPress adjacent post link
 function fnbx_get_adjacent_post_link($format, $link, $in_same_cat = false, $excluded_categories = '', $previous = true) {
 	if ( $previous && is_attachment() )
@@ -1104,14 +1085,12 @@ function fnbx_post_navigation( $direction = '', $type = '' ) {
 
 	if ( !empty( $post_nav_defaults['layout']['tag_content'] ) ) {
 
-		if ( $type != 'image' ) $post_nav_meta = fnbx_get_nav_meta( $direction );
-
 		switch ( $direction ) {
 			case 'previous':
-				$post_nav_defaults['layout']['tag_content'] = $post_nav_meta . $post_nav_defaults['layout']['tag_content'];
+				$post_nav_defaults['layout']['tag_content'] = $post_nav_defaults['layout']['tag_content'];
 				break;
 			case 'next':
-				$post_nav_defaults['layout']['tag_content'] = $post_nav_defaults['layout']['tag_content'] . $post_nav_meta;	
+				$post_nav_defaults['layout']['tag_content'] = $post_nav_defaults['layout']['tag_content'];	
 				break;	
 		}
 		$post_nav_defaults['layout'] = apply_filters( "fnbx_post_navigation_{$direction}",  $post_nav_defaults['layout'] );		
@@ -1143,6 +1122,8 @@ function fnbx_post_navigation_box( $position = '', $type = '' ) {
 		'tag_content_before' => "\n",		
 		'tag_content_after' => "\n"
 	);
+	
+	$nav_box_defaults = apply_filters( "fnbx_post_navigation_box_{$position}",  $nav_box_defaults );	
 
 	fnbx_html_tag( $nav_box_defaults );
 
