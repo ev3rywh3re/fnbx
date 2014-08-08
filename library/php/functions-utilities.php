@@ -511,6 +511,7 @@ function fnbx_do_meta_shortcode( $input = '' ) {
 		case 'author':
 			if ( is_author() ) {
 				$attr = shortcode_parse_atts( $input[2] );
+				if ( !is_array( $attr ) ) return;
 				if ( $attr['pagetitle'] != 'true' ) return;
 			}
 			break;
