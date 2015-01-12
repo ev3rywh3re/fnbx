@@ -66,7 +66,11 @@ if ( function_exists( 'add_theme_support' ) ) {
 	if( $fnbx->theme_support['custom-background'] ) require_once( FNBX_LIBRARY . '/php/theme-support-custom-background.php' );
 	
 	// Custom HTML4 support added by additional function file
-	if( $fnbx->theme_support['htmlfour'] ) require_once( FNBX_LIBRARY . '/php/theme-support-htmlfour.php' );
+	if( $fnbx->theme_support['htmlfour'] )
+		require_once( FNBX_LIBRARY . '/php/theme-support-htmlfour.php' );
+	else 
+		add_theme_support( 'html5' );
+	
 	
 }
 			
