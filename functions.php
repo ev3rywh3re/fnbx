@@ -69,7 +69,7 @@ if ( function_exists( 'add_theme_support' ) ) {
 	if( $fnbx->theme_support['htmlfour'] )
 		require_once( FNBX_LIBRARY . '/php/theme-support-htmlfour.php' );
 	else 
-		add_theme_support( 'html5' );
+		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 	
 	
 }
