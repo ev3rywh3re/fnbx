@@ -45,9 +45,10 @@ function fnbx_doctype() {
 */
 function fnbx_head_meta_viewport() {
 	
+	// max-scale=1 removed since it disables user ability to zoom.
 	$viewport_defaults = array(
 		'name' => 'viewport',
-		'content'=> 'width=device-width, initial-scale=1, maximum-scale=1'
+		'content'=> 'width=device-width, initial-scale=1'
 	);
 	
 	fnbx_write_meta_tag( apply_filters( 'fnbx_head_meta_viewport',  $viewport_defaults ) );	
