@@ -85,7 +85,7 @@ Need to study the behavor of
 		<?php do_action( "fnbx_template_loop_content_{$fnbx->template_part_name}_start", 'entry-summary'  ) ?>
 			
 			<p>
-				<?php _e( 'Sorry, but the information you requested could not be found. You should try searching or visitng other pages on this website.', 'fnbx_lang' ); ?>
+				<?php _e( 'Sorry, but the information you requested could not be found. You should try searching or visiting other pages on this website.', 'fnbx_lang' ); ?>
 			</p>
 		
 		<?php do_action( "fnbx_template_loop_content_{$fnbx->template_part_name}_end", 'entry-summary'  ) ?>
